@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"include": [
+		"src"
+	],
+	"compilerOptions": {
+		"allowJs": true,
+		"baseUrl": ".",
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"isolatedModules": false,
+		"lib": [
+			"es2015",
+			"dom"
+		],
+		"target": "esnext",
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"strict": true,
+		"outDir": "dist",
+		"jsx": "preserve",
+		"types": [
+			"node"
+		]
+	}
+}
