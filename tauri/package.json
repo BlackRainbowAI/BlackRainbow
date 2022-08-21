@@ -12,10 +12,9 @@
 	},
 	"author": "Nikola Hristov <nikola@playform.cloud>",
 	"license": "SEE LICENSE IN LICENSE",
-	"private": true,
 	"engines": {
 		"node": ">=14",
-		"pnpm": ">=7.9.0"
+		"pnpm": "7.9.3"
 	},
 	"scripts": {
 		"build": "esbuild --format=iife --bundle --platform=browser --target=edge104,esnext --sources-content=false --minify --outdir=dist src/fa.ts && esbuild --format=iife  --bundle --platform=browser --target=edge104,esnext --sources-content=false --minify --outdir=dist src/ta.ts && tsc",
