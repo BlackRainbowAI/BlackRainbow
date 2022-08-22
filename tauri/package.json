@@ -17,15 +17,15 @@
 		"pnpm": "7.9.3"
 	},
 	"scripts": {
-		"build": "esbuild --format=iife --bundle --platform=browser --target=edge104,esnext --sources-content=false --minify --outdir=dist src/fa.ts && esbuild --format=iife  --bundle --platform=browser --target=edge104,esnext --sources-content=false --minify --outdir=dist src/ta.ts && tsc",
+		"build": "playform build src/fa.ts src/ta.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
 		"@tauri-apps/api": "1.0.2"
 	},
 	"devDependencies": {
-		"@tauri-apps/cli": "1.0.5",
-		"@types/node": "18.7.9",
-		"typescript": "4.7.4"
+		"@playform/config": "0.0.1",
+		"@playform/scripts": "0.0.1",
+		"@tauri-apps/cli": "1.0.5"
 	}
 }
