@@ -17,7 +17,7 @@
 		"pnpm": "7.9.3"
 	},
 	"scripts": {
-		"build": "playform build src/fa.ts src/ta.ts",
+		"build": "playform build src/*.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
