@@ -1,1 +1,4 @@
-esbuild --format=iife --bundle --platform=browser --target=edge104,esnext --sources-content=false --minify --outdir=dist src/fa.ts && esbuild --format=iife --bundle --platform=browser --target=edge104,esnext --sources-content=false --minify --outdir=dist src/ta.ts && tsc
+esbuild --format=iife --bundle --platform=browser --target=edge104,esnext
+--sources-content=false --minify --outdir=dist src/fa.ts && esbuild
+--format=iife --bundle --platform=browser --target=edge104,esnext
+--sources-content=false --minify --outdir=dist src/ta.ts && tsc
