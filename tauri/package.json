@@ -11,9 +11,9 @@
 		"url": "https://github.com/BlackRainbowAI/npm/issues"
 	},
 	"author": "Nikola Hristov <nikola@playform.cloud>",
-	"license": "SEE LICENSE IN LICENSE",
+	"license": "MIT",
 	"scripts": {
-		"build": "playform build src/*.ts -c esbuild.ts",
+		"build": "playform build src/*.ts -c src/esbuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
