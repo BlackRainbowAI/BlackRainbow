@@ -12,12 +12,8 @@
 	},
 	"author": "Nikola Hristov <nikola@playform.cloud>",
 	"license": "SEE LICENSE IN LICENSE",
-	"engines": {
-		"node": ">=14",
-		"pnpm": "7.9.3"
-	},
 	"scripts": {
-		"build": "playform build src/*.ts",
+		"build": "playform build src/*.ts -c esbuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
