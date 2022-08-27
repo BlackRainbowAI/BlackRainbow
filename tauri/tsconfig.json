@@ -5,6 +5,10 @@
 		"config"
 	],
 	"compilerOptions": {
-		"outDir": "dist"
+		"outDir": "dist",
+		"lib": [
+			"DOM",
+			"ES2015"
+		]
 	}
 }
