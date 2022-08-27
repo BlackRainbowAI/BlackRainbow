@@ -9,7 +9,7 @@ export default {
 	outdir: outDir,
 	bundle: true,
 	platform: "browser",
-	target: "edge104,esnext",
+	target: ["edge104", "esnext"],
 	write: true,
 	sourcesContent: false,
 	plugins: [
