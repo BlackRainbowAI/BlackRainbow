@@ -1,6 +1,7 @@
 {
 	"name": "@blackrainbow/tauri",
 	"version": "0.0.1",
+	"type": "module",
 	"description": "",
 	"repository": {
 		"type": "git",
@@ -13,15 +14,15 @@
 	"author": "Nikola Hristov <nikola@playform.cloud>",
 	"license": "MIT",
 	"scripts": {
-		"build": "playform build src/*.ts -c src/esbuild.ts",
+		"build": "playform build src/*.ts -c config/esbuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
 		"@tauri-apps/api": "1.0.2"
 	},
 	"devDependencies": {
-		"@playform/config": "0.0.1",
-		"@playform/scripts": "0.0.2",
+		"@playform/config": "0.0.2",
+		"@playform/scripts": "0.0.4",
 		"@tauri-apps/cli": "1.0.5"
 	}
 }
