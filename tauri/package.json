@@ -5,7 +5,7 @@
 	"description": "",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/BlackRainbowAI/npm.git"
+		"url": "https://github.com/BlackRainbowAI/npm.git"
 	},
 	"homepage": "https://github.com/BlackRainbowAI/npm#readme",
 	"bugs": {
@@ -21,8 +21,8 @@
 		"@tauri-apps/api": "1.0.2"
 	},
 	"devDependencies": {
-		"@playform/config": "0.0.2",
-		"@playform/scripts": "0.0.4",
+		"@playform/config": "0.0.3",
+		"@playform/scripts": "0.0.5",
 		"@tauri-apps/cli": "1.0.5"
 	}
 }
