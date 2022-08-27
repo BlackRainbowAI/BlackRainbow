@@ -1,5 +1,4 @@
 import type { BuildOptions, PluginBuild } from "esbuild";
-
 import fs from "fs";
 
 const outDir = "dist";
