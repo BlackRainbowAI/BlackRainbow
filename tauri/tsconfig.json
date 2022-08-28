@@ -9,6 +9,11 @@
 		"lib": [
 			"DOM",
 			"ES2015"
+		],
+		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules"
+			}
 		]
 	}
 }
