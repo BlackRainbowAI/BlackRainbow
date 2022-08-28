@@ -1,9 +1,6 @@
 import DOM from "../lib/dom.js";
-import css from "../styles/ta.module.css";
 
 (async () => {
-	console.log(css);
-
 	const refresh = async () => {
 		// @ts-ignore
 		clearInterval(window.refreshInterval);

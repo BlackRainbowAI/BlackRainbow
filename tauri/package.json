@@ -24,8 +24,10 @@
 		"@playform/config": "0.0.3",
 		"@playform/scripts": "0.0.5",
 		"@tauri-apps/cli": "1.0.5",
+		"css-loader": "6.7.1",
 		"fast-glob": "3.2.11",
-		"typescript-plugin-css-modules": "3.4.0"
+		"typescript-plugin-css-modules": "3.4.0",
+		"webpack": "5.74.0"
 	},
 	"publishConfig": {
 		"access": "public"
