@@ -15,8 +15,7 @@
 	"license": "MIT",
 	"scripts": {
 		"build": "playform build src/**/*.ts -c config/esbuild.ts",
-		"tauri": "tauri",
-		"webpack": "webpack"
+		"tauri": "tauri"
 	},
 	"dependencies": {
 		"@tauri-apps/api": "1.0.2"
@@ -27,5 +26,8 @@
 		"@tauri-apps/cli": "1.0.5",
 		"fast-glob": "3.2.11",
 		"typescript-plugin-css-modules": "3.4.0"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
