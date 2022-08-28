@@ -1,15 +1,15 @@
-import Utils from "./utils.js";
+import DOM from "../lib/dom.js";
 
 (async () => {
 	const refresh = async () => {
 		setInterval(async () => {
-			const focus = await Utils.getElement(".most-tracked-item");
+			const focus = await DOM.getElement(".most-tracked-item");
 			const id = Math.floor(Math.random() * focus.length);
 
 			focus.item(id).click();
 
 			(
-				await Utils.getElement(
+				await DOM.getElement(
 					"#follow-aircraft,.setting.hide-aircraft,.ui-icon.ui-icon-closethick"
 				)
 			).forEach((el) => {
@@ -17,7 +17,7 @@ import Utils from "./utils.js";
 			});
 
 			(
-				await Utils.getElement(
+				await DOM.getElement(
 					".overlay-views-panel, .section search-overlay"
 				)
 			).forEach((el) => {
@@ -25,7 +25,7 @@ import Utils from "./utils.js";
 			});
 
 			(
-				await Utils.getElement(".map-control-button.zoom-button.plus")
+				await DOM.getElement(".map-control-button.zoom-button.plus")
 			).forEach((el) => {
 				el.click();
 				el.click();

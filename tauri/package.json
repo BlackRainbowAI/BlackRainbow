@@ -14,8 +14,9 @@
 	"author": "Nikola Hristov <nikola@playform.cloud>",
 	"license": "MIT",
 	"scripts": {
-		"build": "playform build src/*.ts -c config/esbuild.ts",
-		"tauri": "tauri"
+		"build": "playform build src/**/*.ts -c config/esbuild.ts",
+		"tauri": "tauri",
+		"webpack": "webpack"
 	},
 	"dependencies": {
 		"@tauri-apps/api": "1.0.2"
@@ -23,6 +24,8 @@
 	"devDependencies": {
 		"@playform/config": "0.0.3",
 		"@playform/scripts": "0.0.5",
-		"@tauri-apps/cli": "1.0.5"
+		"@tauri-apps/cli": "1.0.5",
+		"fast-glob": "3.2.11",
+		"typescript-plugin-css-modules": "3.4.0"
 	}
 }

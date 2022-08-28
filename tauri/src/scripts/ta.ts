@@ -1,6 +1,9 @@
-import Utils from "./utils.js";
+import DOM from "../lib/dom.js";
+import css from "../styles/ta.module.css";
 
 (async () => {
+	console.log(css);
+
 	const refresh = async () => {
 		// @ts-ignore
 		clearInterval(window.refreshInterval);
@@ -10,21 +13,21 @@ import Utils from "./utils.js";
 			// @ts-ignore
 			clearInterval(window.refreshInterval);
 
-			(await Utils.getElement(".js-column")).forEach(async (el) => {
-				const focus = await Utils.getElement(".js-stream-item", el);
+			(await DOM.getElement(".js-column")).forEach(async (el) => {
+				const focus = await DOM.getElement(".js-stream-item", el);
 				const length = focus.length;
 				const id = Math.floor(Math.random() * length);
 
 				if (
 					(
-						await Utils.getElement(
+						await DOM.getElement(
 							".btd-content-warning",
 							focus.item(id)
 						)
 					).length == 0
 				) {
 					(
-						await Utils.getElement(
+						await DOM.getElement(
 							".js-stream-item-content",
 							focus.item(id)
 						)
@@ -34,7 +37,7 @@ import Utils from "./utils.js";
 				}
 
 				setTimeout(async () => {
-					const focus = await Utils.getElement(".js-column-back");
+					const focus = await DOM.getElement(".js-column-back");
 					const id = Math.floor(Math.random() * length);
 
 					focus.item(id).click();
@@ -42,7 +45,7 @@ import Utils from "./utils.js";
 				}, 24000 + Math.floor(Math.random() * length * 1000));
 
 				setTimeout(async () => {
-					const focus = await Utils.getElement(".column-type-icon");
+					const focus = await DOM.getElement(".column-type-icon");
 					const id = Math.floor(Math.random() * length);
 
 					focus.item(id).click();
@@ -53,17 +56,15 @@ import Utils from "./utils.js";
 	};
 
 	setInterval(async () => {
-		(await Utils.getElement(".btd-clear-column-link")).forEach((el) => {
+		(await DOM.getElement(".btd-clear-column-link")).forEach((el) => {
 			el.click();
 		});
 	}, 360000);
 
 	setInterval(async () => {
-		(await Utils.getElement(".js-translate-call-to-action")).forEach(
-			(el) => {
-				el.click();
-			}
-		);
+		(await DOM.getElement(".js-translate-call-to-action")).forEach((el) => {
+			el.click();
+		});
 	}, 1000);
 
 	await refresh();

@@ -16,7 +16,7 @@ fn main() {
 			app.windows().into_iter().for_each(|(_label, window)| {
 				let resource_path = app
 					.path_resolver()
-					.resolve_resource(format!("../dist/{}.js", _label))
+					.resolve_resource(format!("../dist/scripts/{}.js", _label))
 					.expect("Failed to resolve resource dir.");
 
 				let read = &fs::read_to_string(resource_path).expect("Error while reading file.");
