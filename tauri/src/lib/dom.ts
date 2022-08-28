@@ -13,8 +13,4 @@ export const getElement = async (
 	return parent.querySelectorAll(selector) as NodeListOf<HTMLElement>;
 };
 
-export default () => {
-	return {
-		getElement,
-	};
-};
+export default { getElement };
