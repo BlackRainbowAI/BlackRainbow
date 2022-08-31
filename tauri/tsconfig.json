@@ -11,7 +11,7 @@
 			}
 		]
 	},
-	"extends": "@playform/config/tsconfig.json",
+	"extends": "@lightrix/config/tsconfig.json",
 	"include": [
 		"src",
 		"config"
