@@ -11,18 +11,18 @@
 	"bugs": {
 		"url": "https://github.com/BlackRainbowAI/npm/issues"
 	},
-	"author": "Nikola Hristov <nikola@playform.cloud>",
+	"author": "Nikola Hristov <nikola@lightrix.dev>",
 	"license": "MIT",
 	"scripts": {
-		"build": "playform build src/**/*.ts -c config/esbuild.ts",
+		"build": "lightrix build src/**/*.ts -c config/esbuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
 		"@tauri-apps/api": "1.0.2"
 	},
 	"devDependencies": {
-		"@playform/config": "0.0.3",
-		"@playform/scripts": "0.0.5",
+		"@lightrix/config": "0.0.1",
+		"@lightrix/scripts": "0.0.1",
 		"@tauri-apps/cli": "1.0.5",
 		"css-loader": "6.7.1",
 		"fast-glob": "3.2.11",
