@@ -1,14 +1,13 @@
 import DOM from "../lib/dom.js";
 
 (async () => {
-	const refresh = async () => {
-		// @ts-ignore
-		clearInterval(window.refreshInterval);
+	let interval: NodeJS.Timer;
 
-		// @ts-ignore
-		window.refreshInterval = setInterval(async () => {
-			// @ts-ignore
-			clearInterval(window.refreshInterval);
+	const refresh = async () => {
+		clearInterval(interval);
+
+		interval = setInterval(async () => {
+			clearInterval(interval);
 
 			(await DOM.getElement(".js-column")).forEach(async (el) => {
 				const focus = await DOM.getElement(".js-stream-item", el);

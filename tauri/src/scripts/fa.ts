@@ -1,8 +1,12 @@
 import DOM from "../lib/dom.js";
 
 (async () => {
+	let interval: NodeJS.Timer;
+
 	const refresh = async () => {
-		setInterval(async () => {
+		clearInterval(interval);
+
+		interval = setInterval(async () => {
 			const focus = await DOM.getElement(".most-tracked-item");
 			const id = Math.floor(Math.random() * focus.length);
 
