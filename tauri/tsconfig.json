@@ -9,6 +9,9 @@
 			{
 				"name": "typescript-plugin-css-modules"
 			}
+		],
+		"types": [
+			"./types/window.d.ts"
 		]
 	},
 	"extends": "@lightrix/config/tsconfig.json",
