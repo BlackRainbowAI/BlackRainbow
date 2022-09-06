@@ -11,7 +11,7 @@
 	"bugs": {
 		"url": "https://github.com/BlackRainbowAI/npm/issues"
 	},
-	"author": "nikolarhristov",
+	"author": "blackrainbow",
 	"license": "MIT",
 	"scripts": {
 		"build": "nikola build src/**/*.ts -c config/esbuild.ts",
