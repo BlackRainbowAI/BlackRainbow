@@ -1,22 +1,13 @@
 {
 	"compilerOptions": {
-		"lib": [
-			"DOM",
-			"ES2015"
-		],
+		"lib": ["DOM", "ES2015"],
 		"outDir": "dist",
 		"plugins": [
 			{
 				"name": "typescript-plugin-css-modules"
 			}
-		],
-		"types": [
-			"./types/window.d.ts"
 		]
 	},
 	"extends": "@nikolarhristov/config/tsconfig.json",
-	"include": [
-		"src",
-		"config"
-	]
+	"include": ["src", "config"]
 }
