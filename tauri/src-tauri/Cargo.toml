@@ -2,7 +2,7 @@
 name = "tauri"
 version = "1.0.0"
 description = ""
-authors = ["Nikola Hristov <nikola@lightrix.dev>"]
+authors = ["NIKOLAHRISTOV"]
 license-file = "LICENSE"
 repository = ""
 default-run = "tauri"
