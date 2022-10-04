@@ -3,7 +3,7 @@ import fs from "fs";
 
 const outDir = "dist";
 
-export default {
+export default (): BuildOptions => ({
 	format: "iife",
 	minify: true,
 	outdir: outDir,
@@ -26,4 +26,4 @@ export default {
 			},
 		},
 	],
-} satisfies BuildOptions;
+});
