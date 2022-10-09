@@ -11,8 +11,6 @@
 	"bugs": {
 		"url": "https://github.com/BlackRainbowAI/npm/issues"
 	},
-	"author": "blackrainbow",
-	"license": "MIT",
 	"scripts": {
 		"build": "lightrix build src/**/*.ts -c config/esbuild.ts",
 		"tauri": "tauri"

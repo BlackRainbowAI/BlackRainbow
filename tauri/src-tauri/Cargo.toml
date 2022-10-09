@@ -1,10 +1,6 @@
 [package]
 name = "tauri"
 version = "1.0.0"
-description = ""
-authors = ["nikolaxhristov"]
-license-file = "LICENSE"
-repository = ""
 default-run = "tauri"
 edition = "2021"
 rust-version = "1.57"
