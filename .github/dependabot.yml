@@ -1,10 +1,17 @@
 version: 2
 updates:
+    - package-ecosystem: "github-actions"
+      directory: "/"
+      schedule:
+          interval: "daily"
+      versioning-strategy: increase
+
     - package-ecosystem: "npm"
       directory: "/tauri"
       schedule:
           interval: "daily"
       versioning-strategy: increase
+
     - package-ecosystem: "cargo"
       directory: "/tauri/src-tauri"
       schedule:
