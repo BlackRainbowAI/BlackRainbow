@@ -23,7 +23,7 @@ jobs:
                   run_install: |
                       - recursive: true
                         args: [
-                          --shamefully-hoist=false,
+                          --shamefully-hoist=true,
                           --child-concurrency=9999,
                           --network-concurrency=9999,
                           --prefer-frozen-lockfile=false,
