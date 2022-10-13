@@ -15,6 +15,9 @@
 		"build": "lightrix build src/**/*.ts -c config/esbuild.ts",
 		"tauri": "tauri"
 	},
+	"peerDependencies": {
+		"typescript": "4.8.4"
+	},
 	"dependencies": {
 		"@lightrix/config": "0.0.3",
 		"@lightrix/scripts": "0.0.5",
