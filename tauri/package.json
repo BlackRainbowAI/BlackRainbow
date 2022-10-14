@@ -19,7 +19,7 @@
 		"typescript": "4.8.4"
 	},
 	"dependencies": {
-		"@lightrix/config": "0.0.3",
+		"@lightrix/config": "workspace:0.0.3",
 		"@lightrix/scripts": "0.0.5",
 		"@tauri-apps/api": "1.1.0"
 	},
