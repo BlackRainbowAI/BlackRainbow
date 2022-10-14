@@ -7,6 +7,9 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: "./tauri"
         strategy:
             matrix:
                 node-version: [14, 16, 18]
@@ -26,12 +29,11 @@ jobs:
                           --unsafe-perm=true,
                           --lockfile-only
                         ]
-                  dest: ./tauri
             - uses: actions/setup-node@v3.5.1
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
-                  cache-dependency-path: './tauri/pnpm-lock.yaml'
+                  cache-dependency-path: "./tauri/pnpm-lock.yaml"
             - run: pnpm install
               working-directory: ./tauri
             - run: pnpm run build
