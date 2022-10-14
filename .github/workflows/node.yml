@@ -27,13 +27,14 @@ jobs:
                           --prefer-frozen-lockfile=false,
                           --strict-peer-dependencies=false,
                           --unsafe-perm=true,
-                          --lockfile-only
+                          --lockfile-only,
+                          --package-import-method=clone
                         ]
             - uses: actions/setup-node@v3.5.1
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
-                  cache-dependency-path: "./tauri/pnpm-lock.yaml"
+                  cache-dependency-path: "**/pnpm-lock.yaml"
             - run: pnpm install
               working-directory: ./tauri
             - run: pnpm run build
