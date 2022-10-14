@@ -26,9 +26,9 @@ jobs:
                           --unsafe-perm=true,
                           --lockfile-only
                         ]
-            - run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+            - id: pnpm-cache
+              run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
             - uses: actions/cache@v3
-              name: Setup pnpm cache
               with:
                   path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
                   key:
