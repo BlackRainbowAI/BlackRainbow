@@ -26,22 +26,11 @@ jobs:
                           --unsafe-perm=true,
                           --lockfile-only
                         ]
-            - id: pnpm-cache
-              run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-            - uses: actions/cache@v3
-              with:
-                  path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-                  key:
-                      ${{ runner.os }}-pnpm-store-${{
-                      hashFiles('./tauri/pnpm-lock.yaml') }}
-                  restore-keys: |
-                      ${{ runner.os }}-pnpm-store-
-
             - uses: actions/setup-node@v3.5.1
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
-                  cache-dependency-path: "./tauri/pnpm-lock.yaml"
+                  cache-dependency-path: './tauri/pnpm-lock.yaml'
             - run: pnpm install
               working-directory: ./tauri
             - run: pnpm run build
