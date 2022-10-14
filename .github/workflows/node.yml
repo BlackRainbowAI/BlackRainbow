@@ -35,8 +35,7 @@ jobs:
                       ${{ runner.os }}-pnpm-store-${{
                       hashFiles('./tauri/pnpm-lock.yaml') }}
                   restore-keys: |
-                      ${{ runner.os }}-pnpm-store-${{
-                      hashFiles('./tauri/pnpm-lock.yaml') }}
+                      ${{ runner.os }}-pnpm-store-
 
             - uses: actions/setup-node@v3.5.1
               with:
