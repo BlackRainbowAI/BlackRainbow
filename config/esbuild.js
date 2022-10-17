@@ -1,14 +1,13 @@
 import fs from "fs";
 const outDir = "dist";
-export default () => ({
-    format: "iife",
+export default async () => ({
+    format: "esm",
     minify: true,
     outdir: outDir,
     bundle: true,
     platform: "browser",
     target: ["edge104", "esnext"],
     write: true,
-    sourcesContent: false,
     plugins: [
         {
             name: "clean-dist",

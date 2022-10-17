@@ -3,15 +3,14 @@ import fs from "fs";
 
 const outDir = "dist";
 
-export default (): BuildOptions => ({
-	format: "iife",
+export default async (): Promise<BuildOptions> => ({
+	format: "esm",
 	minify: true,
 	outdir: outDir,
 	bundle: true,
 	platform: "browser",
 	target: ["edge104", "esnext"],
 	write: true,
-	sourcesContent: false,
 	plugins: [
 		{
 			name: "clean-dist",
