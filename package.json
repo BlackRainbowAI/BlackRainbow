@@ -16,11 +16,11 @@
 		"tauri": "tauri"
 	},
 	"dependencies": {
-		"@lightrix/scripts": "0.0.8",
-		"@lightrix/config": "0.0.5",
 		"@tauri-apps/api": "1.1.0"
 	},
 	"devDependencies": {
+		"@lightrix/scripts": "0.0.8",
+		"@lightrix/config": "0.0.5",
 		"@tauri-apps/cli": "1.1.1",
 		"css-loader": "6.7.1",
 		"fast-glob": "3.2.12",
