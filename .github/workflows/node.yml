@@ -31,7 +31,6 @@ jobs:
                           --strict-peer-dependencies=false,
                           --unsafe-perm=true
                         ]
-                  dest: "."
 
             - uses: actions/setup-node@v3.5.1
               with:
