@@ -26,7 +26,7 @@ jobs:
                           --lockfile-only,
                           --network-concurrency=9999,
                           --prefer-frozen-lockfile=false,
-                          --shamefully-hoist=false,
+                          --shamefully-hoist=true,
                           --shared-workspace-lockfile=true,
                           --strict-peer-dependencies=false,
                           --unsafe-perm=true
