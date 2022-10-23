@@ -26,12 +26,10 @@ jobs:
                           --lockfile-only,
                           --network-concurrency=9999,
                           --prefer-frozen-lockfile=false,
-                          --shamefully-hoist=true,
+                          --shamefully-hoist=false,
                           --shared-workspace-lockfile=true,
                           --strict-peer-dependencies=false,
                           --unsafe-perm=true
-                          --node-linker=hoisted
-                          --store-dir=.
                         ]
 
             - uses: actions/setup-node@v3.5.1
@@ -39,7 +37,7 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: "pnpm"
                   cache-dependency-path: ./pnpm-lock.yaml
-            - run: pnpm install
+            - run: pnpm install --store=node_modules/.pnpm-store
               working-directory: .
 
             - run: pnpm run build
