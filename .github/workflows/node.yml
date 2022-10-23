@@ -30,6 +30,7 @@ jobs:
                           --shared-workspace-lockfile=true,
                           --strict-peer-dependencies=false,
                           --unsafe-perm=true
+                          --hoisted-node=true
                         ]
 
             - uses: actions/setup-node@v3.5.1
