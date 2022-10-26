@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"lib": ["DOM", "ES2015"],
+		"outDir": "dist",
+		"plugins": [
+			{
+				"name": "typescript-plugin-css-modules"
+			}
+		]
+	},
+	"extends": "@lightrix/config/base/ts",
+	"include": ["src", "config"]
+}
