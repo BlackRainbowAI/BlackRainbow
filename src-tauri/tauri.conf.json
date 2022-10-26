@@ -1,10 +1,10 @@
 {
-	"$schema": "./../node_modules/@tauri-apps/cli/schema.json",
 	"build": {
 		"beforeBuildCommand": "npm run build",
-		"beforeDevCommand": "npm run build",
-		"devPath": "./../index.html",
-		"distDir": "./../dist/"
+		"beforeDevCommand": "npm run dev",
+		"devPath": "../index.html",
+		"distDir": "../dist/",
+		"withGlobalTauri": false
 	},
 	"package": {
 		"productName": "tauri",
