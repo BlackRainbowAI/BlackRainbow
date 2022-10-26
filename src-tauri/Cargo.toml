@@ -1,9 +1,6 @@
 [package]
 name = "tauri"
-version = "1.0.0"
-default-run = "tauri"
-edition = "2021"
-rust-version = "1.57"
+version = "0.0.1"
 
 [build-dependencies]
 tauri-build = { version = "1.1.1", features = [] }
