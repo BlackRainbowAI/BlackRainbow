@@ -1,34 +1,34 @@
 {
-	"name": "@blackrainbow/tauri",
-	"version": "0.0.1",
-	"type": "module",
-	"description": "",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/BlackRainbowAI/npm.git"
-	},
-	"homepage": "https://github.com/BlackRainbowAI/npm#readme",
-	"bugs": {
-		"url": "https://github.com/BlackRainbowAI/npm/issues"
-	},
-	"scripts": {
-		"build": "lightrix build src/**/*.ts -c config/esbuild.ts",
-		"tauri": "tauri"
-	},
-	"dependencies": {
-		"@tauri-apps/api": "1.1.0"
-	},
-	"devDependencies": {
-		"@lightrix/config": "0.0.6",
-		"@lightrix/scripts": "0.0.13",
-		"@tauri-apps/cli": "1.1.1",
-		"css-loader": "6.7.1",
-		"fast-glob": "3.2.12",
-		"typescript": "4.8.4",
-		"typescript-plugin-css-modules": "3.4.0",
-		"webpack": "5.74.0"
-	},
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "@blackrainbow/tauri",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlackRainbowAI/npm.git"
+  },
+  "homepage": "https://github.com/BlackRainbowAI/npm#readme",
+  "bugs": {
+    "url": "https://github.com/BlackRainbowAI/npm/issues"
+  },
+  "scripts": {
+    "build": "lightrix build src/**/*.ts -c config/esbuild.ts",
+    "tauri": "tauri"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "1.1.0"
+  },
+  "devDependencies": {
+    "@lightrix/config": "0.0.6",
+    "@lightrix/scripts": "0.0.13",
+    "@tauri-apps/cli": "1.1.1",
+    "css-loader": "6.7.1",
+    "fast-glob": "3.2.12",
+    "typescript": "4.8.4",
+    "typescript-plugin-css-modules": "3.4.0",
+    "webpack": "5.74.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
