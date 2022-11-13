@@ -20,7 +20,7 @@ import DOM from "../lib/dom.js";
 							".btd-content-warning",
 							focus.item(id)
 						)
-					).length == 0
+					).length === 0
 				) {
 					(
 						await DOM.getElement(
