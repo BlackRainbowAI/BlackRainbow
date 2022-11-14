@@ -9,5 +9,5 @@
 		]
 	},
 	"extends": "@lightrix/config/base/ts",
-	"include": ["src", "config"]
+	"include": ["src"]
 }
