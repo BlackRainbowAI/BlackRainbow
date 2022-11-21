@@ -22,7 +22,7 @@
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.6",
-		"@lightrix/scripts": "0.0.16",
+		"@lightrix/scripts": "0.0.17",
 		"@tauri-apps/cli": "1.2.0",
 		"css-loader": "6.7.2",
 		"fast-glob": "3.2.12",
