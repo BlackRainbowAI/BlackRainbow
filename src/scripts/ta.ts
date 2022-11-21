@@ -1,4 +1,4 @@
-import DOM from "../lib/dom.js";
+import DOM from "./../lib/dom.js";
 
 (async () => {
 	let interval: NodeJS.Timer;
