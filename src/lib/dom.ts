@@ -1,3 +1,4 @@
+import type { NodeListOf } from "typescript";
 export default async () => ({
 	getElement: async (
 		selector: string,

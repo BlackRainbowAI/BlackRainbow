@@ -38,7 +38,7 @@ import DOM from "../lib/dom.js";
 
 					focus.item(id).click();
 					await refresh();
-				}, 24000 + Math.floor(Math.random() * length * 1000));
+				}, 24000 + Math.floor(Math.random() * length * 1000.0));
 
 				setTimeout(async () => {
 					const focus = await DOM.getElement(".column-type-icon");
@@ -46,7 +46,7 @@ import DOM from "../lib/dom.js";
 
 					focus.item(id).click();
 					await refresh();
-				}, 24000 + Math.floor(Math.random() * length * 1000));
+				}, 24000 + Math.floor(Math.random() * length * 1000.0));
 			});
 		}, 13000);
 	};
@@ -61,7 +61,7 @@ import DOM from "../lib/dom.js";
 		(await DOM.getElement(".js-translate-call-to-action")).forEach((el) => {
 			el.click();
 		});
-	}, 1000);
+	}, 1000.0);
 
 	await refresh();
 })();
