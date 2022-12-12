@@ -17,7 +17,7 @@ export default {
                             recursive: true,
                         });
                     }
-                    catch (error) { }
+                    catch (_error) { }
                 });
             },
         },
