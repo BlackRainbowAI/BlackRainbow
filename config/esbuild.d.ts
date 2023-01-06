@@ -1,10 +1,10 @@
 import type { PluginBuild } from "esbuild";
 declare const _default: {
-    format: string;
-    minify: boolean;
+    format: "esm";
+    minify: true;
     outdir: string;
-    bundle: boolean;
-    platform: string;
+    bundle: true;
+    platform: "browser";
     target: string[];
     plugins: {
         name: string;
