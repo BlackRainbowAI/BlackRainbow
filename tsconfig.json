@@ -1,6 +1,9 @@
 {
 	"compilerOptions": {
-		"lib": ["DOM", "ES2015"],
+		"lib": [
+			"DOM",
+			"ES2015"
+		],
 		"outDir": "dist",
 		"plugins": [
 			{
@@ -9,5 +12,7 @@
 		]
 	},
 	"extends": "@lightrix/config/base/ts",
-	"include": ["src"]
+	"include": [
+		"src"
+	]
 }
