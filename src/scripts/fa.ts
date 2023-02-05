@@ -16,7 +16,7 @@ import DOM from "../lib/dom.js";
 				await DOM.getElement(
 					"#follow-aircraft,.setting.hide-aircraft,.ui-icon.ui-icon-closethick"
 				)
-			).forEach((el) => {
+			).forEach((el: HTMLElement) => {
 				el.click();
 			});
 
@@ -24,13 +24,13 @@ import DOM from "../lib/dom.js";
 				await DOM.getElement(
 					".overlay-views-panel, .section search-overlay"
 				)
-			).forEach((el) => {
+			).forEach((el: HTMLElement) => {
 				el.remove();
 			});
 
 			(
 				await DOM.getElement(".map-control-button.zoom-button.plus")
-			).forEach((el) => {
+			).forEach((el: HTMLElement) => {
 				el.click();
 				el.click();
 				el.click();

@@ -9,7 +9,7 @@
 			{
 				"name": "typescript-plugin-css-modules"
 			}
-		]
+		],
 	},
 	"extends": "@lightrix/config/base/ts",
 	"include": [
