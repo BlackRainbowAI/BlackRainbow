@@ -1,7 +1,7 @@
-name: Rust
+name: Node
 
 concurrency:
-    group: rust-${{ github.workflow }}-${{ github.ref }}
+    group: node-${{ github.workflow }}-${{ github.ref }}
     cancel-in-progress: true
 
 permissions:
@@ -16,7 +16,7 @@ on:
     workflow_call:
 
 jobs:
-    rust:
+    node:
         runs-on: ubuntu-latest
 
         env:
@@ -50,25 +50,31 @@ jobs:
 
         strategy:
             matrix:
-                toolchain: ["stable", "nightly"]
+                node-version: [16, 18, 19]
 
         steps:
             - uses: actions/checkout@v3.3.0
-            - uses: actions-rs/toolchain@v1.0.7
+            - uses: pnpm/action-setup@v2.2.4
               with:
-                  profile: minimal
-                  toolchain: ${{ matrix.toolchain }}
+                  version: 7.17.1
+                  run_install: |
+                      - recursive: true
+                        args: [
+                          --child-concurrency=9999,
+                          --link-workspace-packages=true,
+                          --lockfile-only,
+                          --network-concurrency=9999,
+                          --prefer-frozen-lockfile=false,
+                          --shamefully-hoist=false,
+                          --shared-workspace-lockfile=true,
+                          --strict-peer-dependencies=false,
+                          --unsafe-perm=true
+                        ]
 
-            - uses: actions/cache@v3.2.3
+            - uses: actions/setup-node@v3.6.0
               with:
-                  path: |
-                      ~/.cargo/bin/
-                      ~/.cargo/registry/index/
-                      ~/.cargo/registry/cache/
-                      ~/.cargo/git/db/
-                      target/
-                  key: ${{ runner.os }}-cargo-${{ hash('./src-tauri/Cargo.toml') }}
-            - uses: actions-rs/cargo@v1.0.3
-              with:
-                command: build
-                args: --release --all-features --manifest-path ./src-tauri/Cargo.toml
+                  node-version: ${{ matrix.node-version }}
+                  cache: "pnpm"
+                  cache-dependency-path: ./pnpm-lock.yaml
+            - run: pnpm install
+              working-directory: .
