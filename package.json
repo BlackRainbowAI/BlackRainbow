@@ -5,11 +5,11 @@
 	"description": "BlackRainbow tauri.",
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/blackrainbowai/npm.git"
+		"url": "https://github.com/BlackRainbowAI/npm.git"
 	},
-	"homepage": "https://github.com/blackrainbowai/npm#readme",
+	"homepage": "https://github.com/BlackRainbowAI/npm#readme",
 	"bugs": {
-		"url": "https://github.com/blackrainbowai/npm/issues"
+		"url": "https://github.com/BlackRainbowAI/npm/issues"
 	},
 	"license": "MIT",
 	"main": "./dist/index.js",
