@@ -3,14 +3,12 @@ name = "tauri"
 version = "0.0.1"
 
 [build-dependencies]
-tauri-build = { version = "1.2.1", features = [] }
+tauri-build = { version = "1.2", features = [] }
 
 [dependencies]
-wry = "0.27.0"
-serde_json = "1.0"
+tauri = { version = "1.2", features = ["shell-open"] }
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.2.4", features = ["system-tray", "window-set-position"] }
+serde_json = "1.0"
 
 [features]
-default = ["custom-protocol"]
 custom-protocol = ["tauri/custom-protocol"]

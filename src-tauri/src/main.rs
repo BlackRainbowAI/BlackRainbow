@@ -1,9 +1,10 @@
+extern crate tauri;
+extern crate wry;
+
 #![cfg_attr(all(not(debug_assertions), target_os = "windows"), windows_subsystem = "windows")]
 
-use std::{cell::RefCell, collections::HashMap};
+use std::{cell::RefCell, collections::HashMap, fs};
 use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu};
-
-use std::fs;
 use wry::{application::window::WindowId, webview::WebView};
 
 fn main() {

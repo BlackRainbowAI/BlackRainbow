@@ -1,97 +1,48 @@
 {
 	"build": {
-		"beforeBuildCommand": "npm run build",
-		"beforeDevCommand": "npm run dev",
-		"devPath": "../index.html",
-		"distDir": "../dist/",
+		"beforeDevCommand": "pnpm dev",
+		"beforeBuildCommand": "pnpm build",
+		"devPath": "http://localhost:1420",
+		"distDir": "../dist",
 		"withGlobalTauri": false
 	},
 	"package": {
-		"productName": "tauri",
-		"version": "0.0.1"
+		"productName": "tauri-app",
+		"version": "0.0.0"
 	},
 	"tauri": {
 		"allowlist": {
 			"all": false,
-			"window": {
-				"setPosition": true
+			"shell": {
+				"all": false,
+				"open": true
 			}
 		},
 		"bundle": {
 			"active": true,
-			"category": "DeveloperTool",
-			"copyright": "Copyright (c) 2022 Nikola Hristov. All rights reserved.",
-			"externalBin": [],
 			"icon": [
-				"src/img/16x16.png",
-				"src/img/32x32.png",
-				"src/img/icon.ico"
+				"icons/32x32.png",
+				"icons/128x128.png",
+				"icons/128x128@2x.png",
+				"icons/icon.icns",
+				"icons/icon.ico"
 			],
-			"identifier": "ai.blackrainbow.tauri",
-			"longDescription": "",
-			"resources": ["../dist/*"],
-			"shortDescription": "",
-			"targets": "all",
-			"windows": {
-				"certificateThumbprint": null,
-				"digestAlgorithm": "sha256",
-				"timestampUrl": "",
-				"wix": {
-					"bannerPath": "src/img/banner.png",
-					"dialogImagePath": "src/img/dialogImage.png"
-				}
-			}
+			"identifier": "com.tauri.dev",
+			"targets": "all"
 		},
 		"security": {
 			"csp": null
-		},
-		"systemTray": {
-			"iconAsTemplate": true,
-			"iconPath": "src/img/icon.ico"
 		},
 		"updater": {
 			"active": false
 		},
 		"windows": [
 			{
-				"alwaysOnTop": true,
-				"center": false,
-				"decorations": true,
-				"fileDropEnabled": false,
-				"focus": true,
 				"fullscreen": false,
-				"height": 1080,
-				"label": "fa",
-				"maximized": false,
-				"resizable": false,
-				"skipTaskbar": false,
-				"title": "Follow aircraft.",
-				"transparent": true,
-				"url": "https://flightradar24.com",
-				"visible": true,
-				"width": 1920,
-				"x": 0,
-				"y": 0
-			},
-			{
-				"alwaysOnTop": true,
-				"center": false,
-				"decorations": true,
-				"fileDropEnabled": false,
-				"focus": true,
-				"fullscreen": false,
-				"height": 1080,
-				"label": "ta",
-				"maximized": false,
-				"resizable": false,
-				"skipTaskbar": false,
-				"title": "Twitter automate.",
-				"transparent": true,
-				"url": "https://tweetdeck.twitter.com",
-				"visible": true,
-				"width": 1920,
-				"x": 0,
-				"y": 0
+				"resizable": true,
+				"title": "tauri-app",
+				"width": 800,
+				"height": 600
 			}
 		]
 	}
