@@ -1,7 +1,7 @@
 {
 	"build": {
 		"beforeBuildCommand": "npm run build",
-		"beforeDevCommand": "npm run dev",
+		"beforeDevCommand": "npm run build",
 		"devPath": "../index.html",
 		"distDir": "../dist/",
 		"withGlobalTauri": false

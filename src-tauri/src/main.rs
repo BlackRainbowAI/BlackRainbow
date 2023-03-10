@@ -14,14 +14,28 @@ fn main() {
 	tauri::Builder::default()
 		.setup(|app| {
 			app.windows().into_iter().for_each(|(_label, window)| {
-				let resource_path = app
-					.path_resolver()
-					.resolve_resource(format!("../dist/scripts/{}.js", _label))
-					.expect("Failed to resolve resource dir.");
+				window
+					.eval(
+						&fs::read_to_string(
+							app.path_resolver()
+								.resolve_resource(format!("../dist/scripts/{}.js", _label))
+								.expect("Failed to resolve resource dir."),
+						)
+						.expect("Error while reading JS file."),
+					)
+					.expect("Script did not execute successfully.");
 
-				let read = &fs::read_to_string(resource_path).expect("Error while reading file.");
-
-				window.eval(read).expect("Script did not execute successfully.");
+				window
+					.eval(&format!(
+						r#"var style = document.createElement('style'); style.innerHTML = `{}`; document.head.appendChild(style);"#,
+						&fs::read_to_string(
+							app.path_resolver()
+								.resolve_resource(format!("../dist/styles/{}.css", _label))
+								.expect("Failed to resolve resource dir.")
+						)
+						.expect("Error while reading CSS file.")
+					))
+					.expect("Style did not load successfully.");
 
 				window
 					.with_webview(move |webview| {
