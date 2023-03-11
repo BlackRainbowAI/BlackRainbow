@@ -1,4 +1,3 @@
-import type { PluginBuild } from "esbuild";
 declare const _default: {
     format: "esm";
     minify: true;
@@ -6,9 +5,6 @@ declare const _default: {
     bundle: true;
     platform: "browser";
     target: string[];
-    plugins: {
-        name: string;
-        setup(build: PluginBuild): void;
-    }[];
+    plugins: import("esbuild").Plugin[];
 };
 export default _default;

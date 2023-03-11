@@ -1,6 +1,8 @@
 import type { BuildOptions, PluginBuild } from "esbuild";
 import * as fs from "fs";
 
+import { copy } from "esbuild-plugin-copy";
+
 const outDir = "dist";
 
 export default {
@@ -23,5 +25,15 @@ export default {
 				});
 			},
 		},
+
+		copy({
+			resolveFrom: "out",
+			assets: [
+				{
+					from: "./src/styles/*.css",
+					to: "./styles/",
+				},
+			],
+		}),
 	],
 } satisfies BuildOptions;
