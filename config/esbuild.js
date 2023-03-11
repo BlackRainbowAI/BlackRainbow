@@ -1,4 +1,5 @@
 import * as fs from "fs";
+import { copy } from "esbuild-plugin-copy";
 const outDir = "dist";
 export default {
     format: "esm",
@@ -21,5 +22,14 @@ export default {
                 });
             },
         },
+        copy({
+            resolveFrom: "out",
+            assets: [
+                {
+                    from: "./src/styles/*.css",
+                    to: "./styles/",
+                },
+            ],
+        }),
     ],
 };
