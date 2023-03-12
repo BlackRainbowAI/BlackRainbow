@@ -25,17 +25,19 @@ fn main() {
 					)
 					.expect("Script did not execute successfully.");
 
-					window
+				window
 					.eval(&format!(
 						r#"var style = document.createElement('style'); style.innerHTML = `{}`; document.head.appendChild(style);"#,
 						&fs::read_to_string(
 							app.path_resolver()
-								.resolve_resource(format!("../src/styles/{}.css", _label))
+								.resolve_resource(format!("../dist/styles/{}.css", _label))
 								.expect("Failed to resolve resource dir.")
 						)
 						.expect("Error while reading CSS file.")
 					))
 					.expect("Style did not load successfully.");
+
+
 
 				window
 					.with_webview(move |webview| {
