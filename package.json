@@ -18,14 +18,14 @@
 	},
 	"dependencies": {
 		"@tauri-apps/api": "1.2.0",
-		"solid-js": "1.6.16"
+		"solid-js": "1.7.0"
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.7",
 		"@tauri-apps/cli": "1.2.3",
 		"@types/node": "18.15.11",
 		"esbuild-plugin-copy": "2.1.1",
-		"typescript": "5.0.2",
+		"typescript": "5.0.3",
 		"vite": "4.2.1",
 		"vite-plugin-solid": "2.6.1"
 	}
