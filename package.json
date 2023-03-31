@@ -12,9 +12,6 @@
 		"url": "https://github.com/BlackRainbowAI/npm/issues"
 	},
 	"license": "MIT",
-	"exports": {
-		"./package.json": "./package.json"
-	},
 	"scripts": {
 		"build": "lightrix build src/**/*.ts -c config/esbuild.ts",
 		"tauri": "tauri"
