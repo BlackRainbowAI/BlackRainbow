@@ -7,7 +7,7 @@ interface NodeListOf<TNode extends Node> extends NodeList {
 			key: number,
 			parent: NodeListOf<TNode>
 		) => void,
-		thisArg?: unknown
+		thisArg?: any
 	): void;
 	[index: number]: TNode;
 }
