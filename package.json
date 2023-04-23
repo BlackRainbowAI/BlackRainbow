@@ -13,7 +13,7 @@
 	},
 	"license": "MIT",
 	"scripts": {
-		"build": "lightrix build 'src/**/*.ts' -c config/esbuild.ts",
+		"prepublishOnly": "lightrix build 'src/**/*.ts' -c config/esbuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
@@ -21,9 +21,9 @@
 		"solid-js": "1.7.3"
 	},
 	"devDependencies": {
-		"@lightrix/config": "0.0.9",
+		"@lightrix/config": "0.0.11",
 		"@tauri-apps/cli": "1.2.3",
-		"@types/node": "18.15.12",
+		"@types/node": "18.15.13",
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript": "5.0.4",
 		"vite": "4.3.1",
