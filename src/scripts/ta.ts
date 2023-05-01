@@ -35,17 +35,21 @@ import DOM from "../lib/dom.js";
 
 					setTimeout(async () => {
 						const focus = await DOM.getElement(".js-column-back");
-						const id = Math.floor(Math.random() * length);
 
-						focus.item(id).click();
+						focus.forEach((el: HTMLElement) => {
+							el.click();
+						});
+
 						await refresh();
 					}, 24000 + Math.floor(Math.random() * length * 1000.0));
 
 					setTimeout(async () => {
 						const focus = await DOM.getElement(".column-type-icon");
-						const id = Math.floor(Math.random() * length);
 
-						focus.item(id).click();
+						focus.forEach((el: HTMLElement) => {
+							el.click();
+						});
+
 						await refresh();
 					}, 24000 + Math.floor(Math.random() * length * 1000.0));
 				}
