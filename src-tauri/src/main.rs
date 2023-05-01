@@ -1,16 +1,10 @@
 extern crate tauri;
-extern crate wry;
 
 #[cfg_attr(all(not(debug_assertions), target_os = "windows"), windows_subsystem = "windows")]
-use std::{cell::RefCell, collections::HashMap, fs};
+use std::fs;
 use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu};
-use wry::{application::window::WindowId, webview::WebView};
 
 fn main() {
-	thread_local! {
-		static WEBVIEWS: RefCell<HashMap<WindowId, WebView>> = RefCell::new(HashMap::new());
-	}
-
 	tauri::Builder::default()
 		.setup(|app| {
 			app.windows().into_iter().for_each(|(_label, window)| {
@@ -36,8 +30,6 @@ fn main() {
 						.expect("Error while reading CSS file.")
 					))
 					.expect("Style did not load successfully.");
-
-
 
 				window
 					.with_webview(move |webview| {
