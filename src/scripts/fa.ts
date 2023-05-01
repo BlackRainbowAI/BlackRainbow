@@ -28,12 +28,12 @@ import DOM from "../lib/dom.js";
 				el.remove();
 			});
 
-			// (
-			// 	await DOM.getElement(".map-control-button.zoom-button.plus")
-			// ).forEach((el: HTMLElement) => {
-			// 	el.click();
-			// 	el.click();
-			// });
+			(
+				await DOM.getElement(".map-control-button.zoom-button.plus")
+			).forEach((el: HTMLElement) => {
+				el.click();
+				el.click();
+			});
 		}, 13000);
 	};
 
