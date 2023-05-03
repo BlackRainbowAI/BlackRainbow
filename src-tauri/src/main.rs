@@ -1,6 +1,7 @@
+#[allow(unused_attributes)]
+#[cfg_attr(all(not(debug_assertions), target_os = "windows"), windows_subsystem = "windows")]
 extern crate tauri;
 
-#[cfg_attr(all(not(debug_assertions), target_os = "windows"), windows_subsystem = "windows")]
 use std::fs;
 use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, WindowEvent};
 

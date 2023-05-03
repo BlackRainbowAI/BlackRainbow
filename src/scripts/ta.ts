@@ -71,6 +71,25 @@ setInterval(async () => {
 			index++;
 		}
 	});
+
+	setTimeout(
+		async () =>
+			(
+				await DOM.getElement(
+					".js-tweet-translation-text.tweet-translation-text"
+				)
+			).forEach((el) => {
+				const position = el.getBoundingClientRect();
+
+				if (
+					position.top >= 0 &&
+					position.bottom <= window.innerHeight
+				) {
+					el.scrollIntoView();
+				}
+			}),
+		3000
+	);
 }, 15000.0);
 
 await refresh();
