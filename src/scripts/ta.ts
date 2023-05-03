@@ -76,7 +76,7 @@ setInterval(async () => {
 		async () =>
 			(
 				await DOM.getElement(
-					".js-tweet-translation-text.tweet-translation-text"
+					".js-tweet-detail.tweet-detail-wrapper .js-tweet-translation-text.tweet-translation-text"
 				)
 			).forEach((el) => {
 				const position = el.getBoundingClientRect();
