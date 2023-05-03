@@ -2,7 +2,7 @@ import DOM from "../lib/dom.js";
 
 declare global {
 	interface Window {
-		interval: NodeJS.Timer;
+		interval: number;
 	}
 }
 
@@ -39,7 +39,7 @@ const refresh = async () => {
 				});
 
 				await refresh();
-			}, 24000 + Math.floor(Math.random() * length * 1000.0));
+			}, 24000 + Math.floor(Math.random() * length * 1000));
 
 			setTimeout(async () => {
 				const focus = await DOM.getElement(".column-type-icon");
@@ -49,9 +49,9 @@ const refresh = async () => {
 				});
 
 				await refresh();
-			}, 24000 + Math.floor(Math.random() * length * 1000.0));
+			}, 24000 + Math.floor(Math.random() * length * 1000));
 		});
-	}, 20000);
+	}, 15000);
 };
 
 setInterval(async () => {
@@ -90,6 +90,6 @@ setInterval(async () => {
 			}),
 		3000
 	);
-}, 15000.0);
+}, 15000);
 
 await refresh();
