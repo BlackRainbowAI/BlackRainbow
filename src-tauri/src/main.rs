@@ -46,8 +46,7 @@ fn main() {
 				)
 				.expect("Script did not execute successfully.");
 
-			event.window()
-				.eval(&format!(
+				event.window().eval(&format!(
 					r#"var style = document.createElement('style'); style.innerHTML = `{}`; document.head.appendChild(style);"#,
 					&fs::read_to_string(
 						event.window().app_handle().path_resolver()
