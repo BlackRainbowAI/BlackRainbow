@@ -15,7 +15,7 @@ fn main() {
 					.add_item(CustomMenuItem::new("exit".to_string(), "Exit")),
 			),
 		)
-		.on_system_tray_event(|app, event| {
+		.on_system_tray_event(|app: &tauri::AppHandle, event: SystemTrayEvent| {
 			if let SystemTrayEvent::MenuItemClick { id, .. } = event {
 				match id.as_str() {
 					"show" => {
@@ -35,7 +35,7 @@ fn main() {
 				}
 			}
 		})
-		.on_window_event( |event| match event.event() {
+		.on_window_event( |event: tauri::GlobalWindowEvent| match event.event() {
 			WindowEvent::Focused(_focused) => {
 				event.window().eval(
 					&fs::read_to_string(
