@@ -12,22 +12,19 @@
 	},
 	"tauri": {
 		"allowlist": {
-			"all": false,
-			"window": {
-				"setPosition": true
-			}
+			"all": false
 		},
 		"bundle": {
 			"active": true,
-			"category": "DeveloperTool",
-			"copyright": "Copyright (c) 2022 Nikola Hristov. All rights reserved.",
+			"category": "News",
+			"copyright": "Copyright (c) 2022-2023 Nikola Hristov. All rights reserved.",
 			"externalBin": [],
 			"icon": [
 				"src/img/16x16.png",
 				"src/img/32x32.png",
 				"src/img/icon.ico"
 			],
-			"identifier": "ai.blackrainbow.tauri",
+			"identifier": "media.blackrainbow.app",
 			"longDescription": "",
 			"resources": ["../dist/*"],
 			"shortDescription": "",
@@ -56,10 +53,10 @@
 			{
 				"alwaysOnTop": true,
 				"center": false,
-				"decorations": true,
+				"decorations": false,
 				"fileDropEnabled": false,
 				"focus": true,
-				"fullscreen": true,
+				"fullscreen": false,
 				"label": "fa",
 				"maximized": false,
 				"resizable": false,
@@ -68,16 +65,18 @@
 				"transparent": true,
 				"url": "https://flightradar24.com",
 				"visible": true,
-				"x": 0,
-				"y": 0
+				"x": 1200,
+				"y": 300,
+				"width": 800,
+				"height": 600
 			},
 			{
 				"alwaysOnTop": true,
 				"center": false,
-				"decorations": true,
+				"decorations": false,
 				"fileDropEnabled": false,
 				"focus": true,
-				"fullscreen": true,
+				"fullscreen": false,
 				"label": "ta",
 				"maximized": false,
 				"resizable": false,
@@ -86,8 +85,10 @@
 				"transparent": true,
 				"url": "https://tweetdeck.twitter.com",
 				"visible": true,
-				"x": 0,
-				"y": 0
+				"x": 300,
+				"y": 300,
+				"width": 800,
+				"height": 600
 			}
 		]
 	}
