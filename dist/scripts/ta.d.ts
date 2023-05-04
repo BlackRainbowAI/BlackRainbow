@@ -1,6 +1,7 @@
+/// <reference types="node" resolution-mode="require"/>
 declare global {
     interface Window {
-        interval: number;
+        interval: NodeJS.Timer;
     }
 }
 export {};
