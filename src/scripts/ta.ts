@@ -2,7 +2,7 @@ import DOM from "../lib/dom.js";
 
 declare global {
 	interface Window {
-		interval: number;
+		interval: NodeJS.Timer;
 	}
 }
 
@@ -51,7 +51,7 @@ const refresh = async () => {
 				await refresh();
 			}, 24000 + Math.floor(Math.random() * length * 1000));
 		});
-	}, 15000);
+	}, 30000);
 };
 
 setInterval(async () => {
