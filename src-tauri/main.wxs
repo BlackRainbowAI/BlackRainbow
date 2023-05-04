@@ -1,0 +1,279 @@
+<?if $(sys.BUILDARCH)="x86"?>
+    <?define Win64 = "no"?>
+    <?define PlatformProgramFilesFolder = "ProgramFilesFolder"?>
+<?elseif $(sys.BUILDARCH)="x64"?>
+    <?define Win64 = "yes"?>
+    <?define PlatformProgramFilesFolder = "ProgramFiles64Folder"?>
+<?else?>
+    <?error Unsupported value of sys.BUILDARCH=$(sys.BUILDARCH)?>
+<?endif?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product
+        Id="*"
+        Name="tauri"
+        UpgradeCode="44aeb0de-1c4a-5ea5-bef6-350eee736239"
+        Language="!(loc.TauriLanguage)"
+        Manufacturer="blackrainbow"
+        Version="0.0.1">
+
+        <Package Id="*"
+            Keywords="Installer"
+            InstallerVersion="450"
+            Languages="0"
+            Compressed="yes"
+            InstallScope="perMachine"
+            SummaryCodepage="!(loc.TauriCodepage)" />
+
+        <!-- https://docs.microsoft.com/en-us/windows/win32/msi/reinstallmode -->
+        <!-- reinstall all files; rewrite all registry entries; reinstall all shortcuts -->
+        <Property Id="REINSTALLMODE" Value="amus" />
+
+        <MajorUpgrade Schedule="afterInstallInitialize" AllowDowngrades="yes" />
+
+        <InstallExecuteSequence>
+            <RemoveShortcuts>Installed AND NOT UPGRADINGPRODUCTCODE</RemoveShortcuts>
+        </InstallExecuteSequence>
+
+        <Media Id="1" Cabinet="app.cab" EmbedCab="yes" />
+
+        <WixVariable Id="WixUIBannerBmp"
+            Value="F:\Developer\app\BlackRainbowAI\npm\src-tauri\target\release\resources\banner.png" />
+        <WixVariable Id="WixUIDialogBmp"
+            Value="F:\Developer\app\BlackRainbowAI\npm\src-tauri\target\release\resources\dialogImage.png" />
+
+        <Icon Id="ProductIcon"
+            SourceFile="F:\Developer\app\BlackRainbowAI\npm\src-tauri\target\release\resources\icon.ico" />
+        <Property Id="ARPPRODUCTICON" Value="ProductIcon" />
+        <Property Id="ARPNOREPAIR" Value="yes" Secure="yes" />      <!-- Remove repair -->
+        <SetProperty Id="ARPNOMODIFY" Value="1" After="InstallValidate" Sequence="execute" />
+
+        <!-- initialize with previous InstallDir -->
+        <Property Id="INSTALLDIR">
+            <RegistrySearch Id="PrevInstallDirReg" Root="HKCU" Key="Software\blackrainbow\tauri"
+                Name="InstallDir" Type="raw" />
+        </Property>
+
+        <!-- launch app checkbox -->
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="!(loc.LaunchApp)" />
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
+        <Property Id="WixShellExecTarget" Value="[!Path]" />
+        <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec"
+            Impersonate="yes" />
+
+        <UI>
+            <!-- launch app checkbox -->
+            <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX
+                = 1 and NOT Installed</Publish>
+
+            <Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+
+            <!-- Skip license dialog -->
+            <Publish Dialog="WelcomeDlg"
+                Control="Next"
+                Event="NewDialog"
+                Value="InstallDirDlg"
+                Order="2">1</Publish>
+            <Publish Dialog="InstallDirDlg"
+                Control="Back"
+                Event="NewDialog"
+                Value="WelcomeDlg"
+                Order="2">1</Publish>
+        </UI>
+
+        <UIRef Id="WixUI_InstallDir" />
+
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="DesktopFolder" Name="Desktop">
+                <Component Id="ApplicationShortcutDesktop" Guid="*">
+                    <Shortcut Id="ApplicationDesktopShortcut" Name="tauri" Description="Runs tauri"
+                        Target="[!Path]" WorkingDirectory="INSTALLDIR" />
+                    <RemoveFolder Id="DesktopFolder" On="uninstall" />
+                    <RegistryValue Root="HKCU" Key="Software\blackrainbow\tauri"
+                        Name="Desktop Shortcut" Type="integer" Value="1" KeyPath="yes" />
+                </Component>
+            </Directory>
+            <Directory Id="$(var.PlatformProgramFilesFolder)" Name="PFiles">
+                <Directory Id="INSTALLDIR" Name="tauri" />
+            </Directory>
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="tauri" />
+            </Directory>
+        </Directory>
+
+        <DirectoryRef Id="INSTALLDIR">
+            <Component Id="RegistryEntries" Guid="*">
+                <RegistryKey Root="HKCU" Key="Software\blackrainbow\tauri">
+                    <RegistryValue Name="InstallDir" Type="string" Value="[INSTALLDIR]"
+                        KeyPath="yes" />
+                </RegistryKey>
+            </Component>
+            <Component Id="Path" Guid="3f00cc48-c3f7-5fac-958a-536a07c66a32" Win64="$(var.Win64)">
+                <File Id="Path"
+                    Source="F:\Developer\app\BlackRainbowAI\npm\src-tauri\target\release\tauri.exe"
+                    KeyPath="yes" Checksum="yes" />
+            </Component>
+            <Directory Id="I01bc92dfd98d4e9aa6e05d8061e87cb1" Name="_up_">
+                <Directory Id="I4683bf10493143509e752c6085af28ef" Name="dist">
+                    <Directory Id="Ifd31259cb9884975985df8d900dbfc59" Name="lib">
+                        <Component Id="I50fbad4ea0694b9e9ceaf61b1c5a98d3"
+                            Guid="e57a06ab-7c67-4355-a556-38a559366a33" Win64="$(var.Win64)"
+                            KeyPath="yes">
+                            <File Id="PathFile_I50fbad4ea0694b9e9ceaf61b1c5a98d3"
+                                Source="F:\Developer\app\BlackRainbowAI\npm\src-tauri\..\dist\lib\dom.d.ts" />
+                        </Component>
+                        <Component Id="Id4137a062146455dac95603d1b52af06"
+                            Guid="c5cf90d3-e487-456f-be62-935804cb16fc" Win64="$(var.Win64)"
+                            KeyPath="yes">
+                            <File Id="PathFile_Id4137a062146455dac95603d1b52af06"
+                                Source="F:\Developer\app\BlackRainbowAI\npm\src-tauri\..\dist\lib\dom.js" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="I87ac2dc77381441ba5e17f397cde8400" Name="scripts">
+                        <Component Id="I665a70b08f60468fae45090247ec0ad9"
+                            Guid="bcacada2-73cf-448f-8a24-615f3bdc43f8" Win64="$(var.Win64)"
+                            KeyPath="yes">
+                            <File Id="PathFile_I665a70b08f60468fae45090247ec0ad9"
+                                Source="F:\Developer\app\BlackRainbowAI\npm\src-tauri\..\dist\scripts\fa.d.ts" />
+                        </Component>
+                        <Component Id="Ia942fb2c0e7c4d3a834dcd4a491a9097"
+                            Guid="56c3999a-73cf-446c-acb5-510e368c69a6" Win64="$(var.Win64)"
+                            KeyPath="yes">
+                            <File Id="PathFile_Ia942fb2c0e7c4d3a834dcd4a491a9097"
+                                Source="F:\Developer\app\BlackRainbowAI\npm\src-tauri\..\dist\scripts\fa.js" />
+                        </Component>
+                        <Component Id="I89c52da281c841738bbc32ffd173b379"
+                            Guid="959a77ac-b37a-4248-a9a9-3166bcd607cf" Win64="$(var.Win64)"
+                            KeyPath="yes">
+                            <File Id="PathFile_I89c52da281c841738bbc32ffd173b379"
+                                Source="F:\Developer\app\BlackRainbowAI\npm\src-tauri\..\dist\scripts\ta.d.ts" />
+                        </Component>
+                        <Component Id="Ie4314b2ba5c44842b7f51e60c1d63de4"
+                            Guid="ff466b0f-4e6a-406a-bcc8-60e7e72d4351" Win64="$(var.Win64)"
+                            KeyPath="yes">
+                            <File Id="PathFile_Ie4314b2ba5c44842b7f51e60c1d63de4"
+                                Source="F:\Developer\app\BlackRainbowAI\npm\src-tauri\..\dist\scripts\ta.js" />
+                        </Component>
+                    </Directory>
+                    <Directory Id="I1fad5916538a40ffa690daecdca53d6c" Name="styles">
+                        <Component Id="Ia9123820a9cd4322be3002b889cbc541"
+                            Guid="b1ff26d7-889b-45bb-86b2-40939d6004cb" Win64="$(var.Win64)"
+                            KeyPath="yes">
+                            <File Id="PathFile_Ia9123820a9cd4322be3002b889cbc541"
+                                Source="F:\Developer\app\BlackRainbowAI\npm\src-tauri\..\dist\styles\fa.css" />
+                        </Component>
+                        <Component Id="I056861ee591e409684eded757a41ce4c"
+                            Guid="b6f6328f-e511-420e-a1c7-55296c7a66d1" Win64="$(var.Win64)"
+                            KeyPath="yes">
+                            <File Id="PathFile_I056861ee591e409684eded757a41ce4c"
+                                Source="F:\Developer\app\BlackRainbowAI\npm\src-tauri\..\dist\styles\ta.css" />
+                        </Component>
+                    </Directory>
+                </Directory>
+            </Directory>
+            <Component Id="CMP_UninstallShortcut" Guid="*">
+
+                <Shortcut Id="UninstallShortcut"
+                    Name="Uninstall tauri"
+                    Description="Uninstalls tauri"
+                    Target="[System64Folder]msiexec.exe"
+                    Arguments="/x [ProductCode]" />
+
+                <RemoveFolder Id="INSTALLDIR"
+                    On="uninstall" />
+
+                <RegistryValue Root="HKCU"
+                    Key="Software\blackrainbow\tauri"
+                    Name="Uninstaller Shortcut"
+                    Type="integer"
+                    Value="1"
+                    KeyPath="yes" />
+            </Component>
+        </DirectoryRef>
+
+        <DirectoryRef Id="ApplicationProgramsFolder">
+            <Component Id="ApplicationShortcut" Guid="*">
+                <Shortcut Id="ApplicationStartMenuShortcut"
+                    Name="tauri"
+                    Description="Runs tauri"
+                    Target="[!Path]"
+                    Icon="ProductIcon"
+                    WorkingDirectory="INSTALLDIR">
+                    <ShortcutProperty Key="System.AppUserModel.ID" Value="media.blackrainbow.app" />
+                </Shortcut>
+                <RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+                <RegistryValue Root="HKCU" Key="Software\blackrainbow\tauri"
+                    Name="Start Menu Shortcut" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+        </DirectoryRef>
+
+        <Feature
+            Id="MainProgram"
+            Title="Application"
+            Description="!(loc.InstallAppFeature)"
+            Level="1"
+            ConfigurableDirectory="INSTALLDIR"
+            AllowAdvertise="no"
+            Display="expand"
+            Absent="disallow">
+
+            <ComponentRef Id="RegistryEntries" />
+
+            <ComponentRef Id="I50fbad4ea0694b9e9ceaf61b1c5a98d3" />
+            <ComponentRef Id="Id4137a062146455dac95603d1b52af06" />
+            <ComponentRef Id="I665a70b08f60468fae45090247ec0ad9" />
+            <ComponentRef Id="Ia942fb2c0e7c4d3a834dcd4a491a9097" />
+            <ComponentRef Id="I89c52da281c841738bbc32ffd173b379" />
+            <ComponentRef Id="Ie4314b2ba5c44842b7f51e60c1d63de4" />
+            <ComponentRef Id="Ia9123820a9cd4322be3002b889cbc541" />
+            <ComponentRef Id="I056861ee591e409684eded757a41ce4c" />
+
+            <Feature Id="ShortcutsFeature"
+                Title="Shortcuts"
+                Level="1">
+                <ComponentRef Id="Path" />
+                <ComponentRef Id="CMP_UninstallShortcut" />
+                <ComponentRef Id="ApplicationShortcut" />
+                <ComponentRef Id="ApplicationShortcutDesktop" />
+            </Feature>
+
+            <Feature
+                Id="Environment"
+                Title="PATH Environment Variable"
+                Description="!(loc.PathEnvVarFeature)"
+                Level="1"
+                Absent="allow">
+                <ComponentRef Id="Path" />
+            </Feature>
+        </Feature>
+
+        <Feature Id="External" AllowAdvertise="no" Absent="disallow">
+        </Feature>
+
+        <!-- WebView2 -->
+        <Property Id="WVRTINSTALLED">
+            <RegistrySearch Id="WVRTInstalledSystem" Root="HKLM"
+                Key="SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}"
+                Name="pv" Type="raw" Win64="no" />
+            <RegistrySearch Id="WVRTInstalledUser" Root="HKCU"
+                Key="SOFTWARE\Microsoft\EdgeUpdate\Clients\{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}"
+                Name="pv" Type="raw" />
+        </Property>
+
+        <CustomAction Id='DownloadAndInvokeBootstrapper' Directory="INSTALLDIR" Execute="deferred"
+            ExeCommand='powershell.exe -NoProfile -windowstyle hidden try [\{] [\[]Net.ServicePointManager[\]]::SecurityProtocol = [\[]Net.SecurityProtocolType[\]]::Tls12 [\}] catch [\{][\}]; Invoke-WebRequest -Uri "https://go.microsoft.com/fwlink/p/?LinkId=2124703" -OutFile "$env:TEMP\MicrosoftEdgeWebview2Setup.exe" ; Start-Process -FilePath "$env:TEMP\MicrosoftEdgeWebview2Setup.exe" -ArgumentList (&amp;apos;/silent&amp;apos;, &apos;/install&apos;) -Wait'
+            Return='check' />
+        <InstallExecuteSequence>
+            <Custom Action='DownloadAndInvokeBootstrapper' Before='InstallFinalize'>
+                <![CDATA[NOT(REMOVE OR WVRTINSTALLED)]]>
+            </Custom>
+        </InstallExecuteSequence>
+
+        <!-- Embedded webview bootstrapper mode -->
+
+        <!-- Embedded offline installer -->
+
+
+        <SetProperty Id="ARPINSTALLLOCATION" Value="[INSTALLDIR]" After="CostFinalize" />
+    </Product>
+</Wix>
