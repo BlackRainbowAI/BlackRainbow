@@ -36,7 +36,8 @@
 				"timestampUrl": "",
 				"wix": {
 					"bannerPath": "src/img/banner.png",
-					"dialogImagePath": "src/img/dialogImage.png"
+					"dialogImagePath": "src/img/dialogImage.png",
+					"template": "main.wxs"
 				}
 			}
 		},
