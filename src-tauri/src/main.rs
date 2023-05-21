@@ -3,31 +3,11 @@
 extern crate tauri;
 
 use std::fs;
-use tauri::{
-	CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, WindowBuilder,
-	WindowEvent,
-};
+use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu};
 
 fn main() {
 	tauri::Builder::default()
-    	.setup(|app| {
-			let sample_window = WindowBuilder::new(
-				app,
-				"sample",
-				tauri::WindowUrl::External("https://blackrainbow.media".parse().unwrap()),
-			)
-			.visible(false)
-			.always_on_top(false)
-			.decorations(false)
-			.fullscreen(false)
-			.focused(false)
-			.title("")
-			.position(0.0, 0.0)
-			.build()
-			.expect("Error! Failed to create a sample window.");
-
-			Ok(())
-		})
+    	
 		.system_tray(
 			SystemTray::new().with_menu(
 				SystemTrayMenu::new()
@@ -37,6 +17,8 @@ fn main() {
 					.add_item(CustomMenuItem::new("run".to_string(), "Run Scripts"))
 			),
 		)
+
+
 		.on_system_tray_event(|app: &tauri::AppHandle, event: SystemTrayEvent| {
 			if let SystemTrayEvent::MenuItemClick { id, .. } = event {
 				match id.as_str() {
@@ -46,6 +28,8 @@ fn main() {
 						});
 					}
 					"hide" => {
+
+
 						app.windows().into_iter().for_each(|(_label, window)| {
 							window.hide().unwrap();
 						});
@@ -54,36 +38,29 @@ fn main() {
 						std::process::exit(0);
 					}
 					"run" => {
-
-					}
-					_ => {}
-				}
-			}
-		})
-		.on_window_event(|event: tauri::GlobalWindowEvent| match event.event() {
-			WindowEvent::Focused(_focused) => {
-				event.window().eval(
-					&fs::read_to_string(
-						event.window().app_handle().path_resolver()
-							.resolve_resource(format!("../dist/scripts/{}.js", event.window().label()))
+						app.windows().into_iter().for_each(|(_label, window)| {
+					window.eval(&fs::read_to_string(window.app_handle().path_resolver()						.resolve_resource(format!("../dist/scripts/{}.js", window.label()))
 							.expect("Failed to resolve resource dir."),
 					)
 					.expect("Error while reading JS file."),
 				)
 				.expect("Script did not execute successfully.");
 
-				event.window().eval(&format!(
+				window.eval(&format!(
 					r#"var style = document.createElement('style'); style.innerHTML = `{}`; document.head.appendChild(style);"#,
 					&fs::read_to_string(
-						event.window().app_handle().path_resolver()
-							.resolve_resource(format!("../dist/styles/{}.css", event.window().label()))
+						window.app_handle().path_resolver()
+							.resolve_resource(format!("../dist/styles/{}.css", window.label()))
 							.expect("Failed to resolve resource dir.")
 					)
 					.expect("Error while reading CSS file.")
 				))
 				.expect("Style did not load successfully.");
+						})
+					}
+					_ => {}
+				}
 			}
-			_ => {}
 		})
 		.run(tauri::generate_context!())
 		.expect("Error! Failed to run Tauri.");
