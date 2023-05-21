@@ -3,16 +3,38 @@
 extern crate tauri;
 
 use std::fs;
-use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, WindowEvent};
+use tauri::{
+	CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu, WindowBuilder,
+	WindowEvent,
+};
 
 fn main() {
 	tauri::Builder::default()
+    	.setup(|app| {
+			let sample_window = WindowBuilder::new(
+				app,
+				"sample",
+				tauri::WindowUrl::External("https://blackrainbow.media".parse().unwrap()),
+			)
+			.visible(false)
+			.always_on_top(false)
+			.decorations(false)
+			.fullscreen(false)
+			.focused(false)
+			.title("")
+			.position(0.0, 0.0)
+			.build()
+			.expect("Error! Failed to create a sample window.");
+
+			Ok(())
+		})
 		.system_tray(
 			SystemTray::new().with_menu(
 				SystemTrayMenu::new()
 					.add_item(CustomMenuItem::new("show".to_string(), "Show"))
 					.add_item(CustomMenuItem::new("hide".to_string(), "Hide"))
-					.add_item(CustomMenuItem::new("exit".to_string(), "Exit")),
+					.add_item(CustomMenuItem::new("exit".to_string(), "Exit"))
+					.add_item(CustomMenuItem::new("run".to_string(), "Run Scripts"))
 			),
 		)
 		.on_system_tray_event(|app: &tauri::AppHandle, event: SystemTrayEvent| {
@@ -31,11 +53,14 @@ fn main() {
 					"exit" => {
 						std::process::exit(0);
 					}
+					"run" => {
+
+					}
 					_ => {}
 				}
 			}
 		})
-		.on_window_event( |event: tauri::GlobalWindowEvent| match event.event() {
+		.on_window_event(|event: tauri::GlobalWindowEvent| match event.event() {
 			WindowEvent::Focused(_focused) => {
 				event.window().eval(
 					&fs::read_to_string(
