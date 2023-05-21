@@ -42,14 +42,20 @@
 		},
 		"security": {
 			"csp": null,
+			"dangerousDisableAssetCspModification": true,
 			"dangerousRemoteDomainIpcAccess": [
 				{
-					"domain": "twitter.com",
+					"domain": "www.twitter.com",
 					"enableTauriAPI": true,
 					"windows": ["ta"]
 				},
 				{
-					"domain": "flightradar24.com",
+					"domain": "tweetdeck.twitter.com",
+					"enableTauriAPI": true,
+					"windows": ["ta"]
+				},
+				{
+					"domain": "www.flightradar24.com",
 					"enableTauriAPI": true,
 					"windows": ["fa"]
 				}
@@ -64,7 +70,7 @@
 		},
 		"windows": [
 			{
-				"alwaysOnTop": true,
+				"alwaysOnTop": false,
 				"center": false,
 				"decorations": false,
 				"fileDropEnabled": false,
@@ -82,7 +88,7 @@
 				"y": 0
 			},
 			{
-				"alwaysOnTop": true,
+				"alwaysOnTop": false,
 				"center": false,
 				"decorations": false,
 				"fileDropEnabled": false,
