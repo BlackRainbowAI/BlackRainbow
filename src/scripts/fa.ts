@@ -14,7 +14,7 @@ const refresh = async () => {
 		const id = Math.floor(Math.random() * focus.length);
 
 		(await DOM.getElement(".map-control-button.zoom-button.plus")).forEach(
-			el =>
+			(el) =>
 				setTimeout(() => {
 					el?.click();
 					setTimeout(() => el?.click(), 1000);
@@ -23,7 +23,7 @@ const refresh = async () => {
 
 		focus.item(id)?.click();
 
-		(await DOM.getElement(".ui-icon.ui-icon-closethick")).forEach(el => {
+		(await DOM.getElement(".ui-icon.ui-icon-closethick")).forEach((el) => {
 			el?.click();
 		});
 
@@ -35,11 +35,11 @@ const refresh = async () => {
 			await DOM.getElement(
 				'.setting.hide-aircraft .toggle[data-action="hideAircraft"]:not(.on)'
 			)
-		).forEach(el => el?.parentElement?.click());
+		).forEach((el) => el?.parentElement?.click());
 
 		(
 			await DOM.getElement(".overlay-views-panel,.section.search-overlay")
-		).forEach(el => el.remove());
+		).forEach((el) => el.remove());
 	}, 30000);
 };
 

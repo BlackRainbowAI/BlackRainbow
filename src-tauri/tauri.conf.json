@@ -1,94 +1,104 @@
 {
-    "$schema": "https://raw.githubusercontent.com/tauri-apps/tauri/dev/tooling/cli/schema.json",
-    "build": {
-        "beforeBuildCommand": "npm run build",
-        "beforeDevCommand": "npm run build",
-        "devPath": "../index.html",
-        "distDir": "../dist",
-        "withGlobalTauri": false
-    },
-    "package": {
-        "productName": "tauri",
-        "version": "0.0.1"
-    },
-    "tauri": {
-        "allowlist": {
-            "all": false
-        },
-        "bundle": {
-            "active": true,
-            "category": "News",
-            "copyright": "Copyright (c) 2022-2023 Nikola Hristov. All rights reserved.",
-            "externalBin": [],
-            "icon": [
-                "src/img/16x16.png",
-                "src/img/32x32.png",
-                "src/img/icon.ico"
-            ],
-            "identifier": "media.blackrainbow.app",
-            "longDescription": "",
-            "resources": [
-                "../dist/*"
-            ],
-            "shortDescription": "",
-            "targets": "all",
-            "windows": {
-                "certificateThumbprint": null,
-                "digestAlgorithm": "sha256",
-                "timestampUrl": "",
-                "wix": {
-                    "bannerPath": "src/img/banner.png",
-                    "dialogImagePath": "src/img/dialogImage.png"
-                }
-            }
-        },
-        "security": {
-            "csp": null
-        },
-        "systemTray": {
-            "iconAsTemplate": true,
-            "iconPath": "src/img/icon.ico"
-        },
-        "updater": {
-            "active": false
-        },
-        "windows": [
-            {
-                "alwaysOnTop": true,
-                "center": false,
-                "decorations": false,
-                "fileDropEnabled": false,
-                "focus": true,
-                "fullscreen": true,
-                "label": "fa",
-                "maximized": false,
-                "resizable": false,
-                "skipTaskbar": false,
-                "title": "Follow aircraft.",
-                "transparent": true,
-                "url": "https://flightradar24.com",
-                "visible": true,
-                "x": 0,
-                "y": 0
-            },
-            {
-                "alwaysOnTop": true,
-                "center": false,
-                "decorations": false,
-                "fileDropEnabled": false,
-                "focus": true,
-                "fullscreen": true,
-                "label": "ta",
-                "maximized": false,
-                "resizable": false,
-                "skipTaskbar": false,
-                "title": "Twitter automate.",
-                "transparent": true,
-                "url": "https://tweetdeck.twitter.com",
-                "visible": true,
-                "x": 0,
-                "y": 0
-            }
-        ]
-    }
+	"$schema": "https://raw.githubusercontent.com/tauri-apps/tauri/dev/tooling/cli/schema.json",
+	"build": {
+		"beforeBuildCommand": "npm run build",
+		"beforeDevCommand": "npm run build",
+		"devPath": "../index.html",
+		"distDir": "../dist",
+		"withGlobalTauri": false
+	},
+	"package": {
+		"productName": "tauri",
+		"version": "0.0.1"
+	},
+	"tauri": {
+		"allowlist": {
+			"all": false
+		},
+		"bundle": {
+			"active": true,
+			"category": "News",
+			"copyright": "Copyright (c) 2022-2023 Nikola Hristov. All rights reserved.",
+			"externalBin": [],
+			"icon": [
+				"src/img/16x16.png",
+				"src/img/32x32.png",
+				"src/img/icon.ico"
+			],
+			"identifier": "media.blackrainbow.app",
+			"longDescription": "",
+			"resources": ["../dist/*"],
+			"shortDescription": "",
+			"targets": "all",
+			"windows": {
+				"certificateThumbprint": null,
+				"digestAlgorithm": "sha256",
+				"timestampUrl": "",
+				"wix": {
+					"bannerPath": "src/img/banner.png",
+					"dialogImagePath": "src/img/dialogImage.png"
+				}
+			}
+		},
+		"security": {
+			"csp": null,
+			"dangerousRemoteDomainIpcAccess": [
+				{
+					"domain": "twitter.com",
+					"enableTauriAPI": true,
+					"windows": ["ta"]
+				},
+				{
+					"domain": "flightradar24.com",
+					"enableTauriAPI": true,
+					"windows": ["fa"]
+				}
+			]
+		},
+		"systemTray": {
+			"iconAsTemplate": true,
+			"iconPath": "src/img/icon.ico"
+		},
+		"updater": {
+			"active": false
+		},
+		"windows": [
+			{
+				"alwaysOnTop": true,
+				"center": false,
+				"decorations": false,
+				"fileDropEnabled": false,
+				"focus": true,
+				"fullscreen": true,
+				"label": "fa",
+				"maximized": false,
+				"resizable": false,
+				"skipTaskbar": false,
+				"title": "Follow aircraft.",
+				"transparent": true,
+				"url": "https://flightradar24.com",
+				"visible": true,
+				"x": 0,
+				"y": 0
+			},
+			{
+				"alwaysOnTop": true,
+				"center": false,
+				"decorations": false,
+				"fileDropEnabled": false,
+				"focus": true,
+				"fullscreen": true,
+				"label": "ta",
+				"maximized": false,
+				"resizable": false,
+				"skipTaskbar": false,
+				"title": "Twitter automate.",
+				"transparent": true,
+				"url": "https://tweetdeck.twitter.com",
+				"visible": true,
+				"x": 0,
+				"y": 0
+			}
+		]
+	}
 }
