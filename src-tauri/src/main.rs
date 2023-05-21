@@ -16,7 +16,7 @@ fn main() {
 					.add_item(CustomMenuItem::new("run".to_string(), "Run Scripts")),
 			),
 		)
-		.on_system_tray_event(|app: &tauri::AppHandle, event: SystemTrayEvent| {
+		.on_system_tray_event(|app, event| {
 			if let SystemTrayEvent::MenuItemClick { id, .. } = event {
 				match id.as_str() {
 					"show" => {
