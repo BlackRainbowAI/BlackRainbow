@@ -25,7 +25,7 @@ html body {
 
 html body .js-app-columns-container.app-columns-container,
 html body .column-scroller {
-	overflow: none !important;
+	overflow: hidden !important;
 }
 
 html body .column-drag-handle,
