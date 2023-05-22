@@ -27,9 +27,7 @@ fn main() {
 						window
 							.eval(
 								&fs::read_to_string(
-									window
-										.app_handle()
-										.path_resolver()
+									app.path_resolver()
 										.resolve_resource(format!(
 											"../dist/scripts/{}.js",
 											window.label()
@@ -45,12 +43,11 @@ fn main() {
 								r#"
 									var style = document.createElement('style');
 									style.innerHTML = `{}`;
+									style.setAttribute('data-from', 'tauri');
 									document.head.appendChild(style);
 								"#,
 								&fs::read_to_string(
-									window
-										.app_handle()
-										.path_resolver()
+									app.path_resolver()
 										.resolve_resource(format!(
 											"../dist/styles/{}.css",
 											window.label()
