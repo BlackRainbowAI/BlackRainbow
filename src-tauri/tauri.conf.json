@@ -13,7 +13,7 @@
 	},
 	"tauri": {
 		"allowlist": {
-			"all": false
+			"all": true
 		},
 		"bundle": {
 			"active": true,
@@ -70,7 +70,7 @@
 		},
 		"windows": [
 			{
-				"alwaysOnTop": false,
+				"alwaysOnTop": true,
 				"center": false,
 				"decorations": false,
 				"fileDropEnabled": false,
@@ -88,7 +88,7 @@
 				"y": 0
 			},
 			{
-				"alwaysOnTop": false,
+				"alwaysOnTop": true,
 				"center": false,
 				"decorations": false,
 				"fileDropEnabled": false,
