@@ -12,3 +12,6 @@ serde_json = "1.0.96"
 
 [features]
 custom-protocol = ["tauri/custom-protocol"]
+
+[target."cfg(windows)".dependencies]
+winapi = { version = "0.3.9", features = ["shellscalingapi"] }

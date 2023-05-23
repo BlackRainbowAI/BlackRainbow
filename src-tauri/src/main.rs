@@ -5,7 +5,15 @@ extern crate tauri;
 use std::fs;
 use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayEvent, SystemTrayMenu};
 
+#[cfg(windows)]
+extern crate winapi;
+
 fn main() {
+	#[cfg(target_os = "windows")]
+	unsafe {
+		winapi::um::shellscalingapi::SetProcessDpiAwareness(1);
+	}
+
 	tauri::Builder::default()
 		.system_tray(
 			SystemTray::new().with_menu(
