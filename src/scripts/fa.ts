@@ -23,7 +23,11 @@ const refresh = async () => {
 
 		focus.item(id)?.click();
 
-		(await DOM.getElement(".ui-icon.ui-icon-closethick")).forEach((el) => {
+		(
+			await DOM.getElement(
+				".ui-icon.ui-icon-closethick,.modal-footer .btn.btn-blue"
+			)
+		).forEach((el) => {
 			el?.click();
 		});
 
@@ -44,5 +48,3 @@ const refresh = async () => {
 };
 
 await refresh();
-
-
