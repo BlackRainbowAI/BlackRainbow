@@ -3,7 +3,7 @@ import DOM from "../lib/dom.js";
 declare global {
 	interface Window {
 		interval: NodeJS.Timer;
-		timeout: NodeJS.Timer;
+		timeout: NodeJS.Timeout;
 	}
 }
 
@@ -24,6 +24,7 @@ const refresh = async () => {
 		const focus = await DOM.getElement(
 			'[data-testid="most-tracked-flights-widget"] [data-testid="list-wrapper"] > div'
 		);
+
 		const id = Math.floor(Math.random() * focus.length);
 
 		(await DOM.getElement('[data-testid="map-controls__zoom-in"]')).forEach(
