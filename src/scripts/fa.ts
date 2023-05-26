@@ -3,7 +3,7 @@ import DOM from "../lib/dom.js";
 declare global {
 	interface Window {
 		interval: NodeJS.Timer;
-		timeout: NodeJS.Timer
+		timeout: NodeJS.Timer;
 	}
 }
 
@@ -44,19 +44,21 @@ const refresh = async () => {
 			el?.click();
 		});
 
-		(
-			await DOM.getElement(
-				'[data-testid="aircraft__follow-flight-button"]:not(.text-yellow-500)'
+		setTimeout(async () => {
+			(
+				await DOM.getElement(
+					'[data-testid="aircraft__follow-flight-button"]:not(.text-yellow-500)'
+				)
 			)
-		)
-			.item(0)
-			?.click();
+				.item(0)
+				?.click();
 
-		(
-			await DOM.getElement(
-				'[data-testid="aircraft-panel__more__hide-not-selected-btn"] [aria-checked="false"]'
-			)
-		).forEach((el) => el?.parentElement?.click());
+			(
+				await DOM.getElement(
+					'[data-testid="aircraft-panel__more__hide-not-selected-btn"] [aria-checked="false"]'
+				)
+			).forEach((el) => el?.parentElement?.click());
+		}, 3000);
 
 		(
 			await DOM.getElement(".overlay-views-panel,.section.search-overlay")
