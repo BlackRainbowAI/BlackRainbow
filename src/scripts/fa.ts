@@ -3,6 +3,7 @@ import DOM from "../lib/dom.js";
 declare global {
 	interface Window {
 		interval: NodeJS.Timer;
+		timeout: NodeJS.Timer
 	}
 }
 
@@ -10,10 +11,22 @@ const refresh = async () => {
 	clearInterval(window.interval);
 
 	window.interval = setInterval(async () => {
-		const focus = await DOM.getElement(".most-tracked-item");
+		clearTimeout(window.timeout);
+
+		window.timeout = setTimeout(async () => {
+			(
+				await DOM.getElement(
+					'[data-testid="aircraft-panel__header"] button.rounded-md'
+				)
+			).forEach((el) => el.click());
+		}, 25000);
+
+		const focus = await DOM.getElement(
+			'[data-testid="most-tracked-flights-widget"] [data-testid="list-wrapper"] > div'
+		);
 		const id = Math.floor(Math.random() * focus.length);
 
-		(await DOM.getElement(".map-control-button.zoom-button.plus")).forEach(
+		(await DOM.getElement('[data-testid="map-controls__zoom-in"]')).forEach(
 			(el) =>
 				setTimeout(() => {
 					el?.click();
@@ -25,19 +38,23 @@ const refresh = async () => {
 
 		(
 			await DOM.getElement(
-				".ui-icon.ui-icon-closethick,.modal-footer .btn.btn-blue"
+				'.ui-icon.ui-icon-closethick,[data-testid="aircraft__not-live-flight"] [data-testid="base-button"]'
 			)
 		).forEach((el) => {
 			el?.click();
 		});
 
-		(await DOM.getElement("#follow-aircraft:not(.active)"))
+		(
+			await DOM.getElement(
+				'[data-testid="aircraft__follow-flight-button"]:not(.text-yellow-500)'
+			)
+		)
 			.item(0)
 			?.click();
 
 		(
 			await DOM.getElement(
-				'.setting.hide-aircraft .toggle[data-action="hideAircraft"]:not(.on)'
+				'[data-testid="aircraft-panel__more__hide-not-selected-btn"] [aria-checked="false"]'
 			)
 		).forEach((el) => el?.parentElement?.click());
 

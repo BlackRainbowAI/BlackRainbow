@@ -2,6 +2,7 @@
 declare global {
     interface Window {
         interval: NodeJS.Timer;
+        timeout: NodeJS.Timer;
     }
 }
 export {};
