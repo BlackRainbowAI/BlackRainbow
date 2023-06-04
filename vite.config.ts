@@ -13,4 +13,9 @@ export default defineConfig(async () => ({
 		minify: process.env.TAURI_DEBUG ? false : "esbuild",
 		sourcemap: !!process.env.TAURI_DEBUG,
 	},
+	vite: {
+		build: {
+			sourcemap: true
+		}
+	}
 }));
