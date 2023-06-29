@@ -22,7 +22,7 @@
 	},
 	"devDependencies": {
 		"@lightrix/config": "0.0.11",
-		"@lightrix/scripts": "1.0.4",
+		"@lightrix/scripts": "1.0.5",
 		"@tauri-apps/cli": "1.4.0",
 		"@types/node": "20.3.2",
 		"esbuild-plugin-copy": "2.1.1",
