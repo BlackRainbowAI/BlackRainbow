@@ -13,13 +13,11 @@ const refresh = async () => {
 	window.interval = setInterval(async () => {
 		clearTimeout(window.timeout);
 
-		window.timeout = setTimeout(async () => {
-			(
-				await DOM.getElement(
-					'[data-testid="aircraft-panel__header"] button.rounded-md'
-				)
-			).forEach((el) => el.click());
-		}, 25000);
+		window.timeout = setTimeout(async () => (
+			await DOM.getElement(
+				'[data-testid="aircraft-panel__header"] button.rounded-md'
+			)
+		).forEach((el) => el.click()), 25000);
 
 		const focus = await DOM.getElement(
 			'[data-testid="most-tracked-flights-widget"] [data-testid="list-wrapper"] > div'

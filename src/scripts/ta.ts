@@ -54,11 +54,13 @@ const refresh = async () => {
 	}, 30000);
 };
 
-setInterval(async () => {
-	(await DOM.getElement(".btd-clear-column-link")).forEach((el) => {
-		el?.click();
-	});
-}, 55000);
+setInterval(
+	async () =>
+		(await DOM.getElement(".btd-clear-column-link")).forEach((el) => {
+			el?.click();
+		}),
+	55000
+);
 
 setInterval(async () => {
 	const translations = await DOM.getElement(".js-translate-call-to-action");
