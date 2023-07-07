@@ -27,7 +27,11 @@
 		"@types/node": "20.4.0",
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript": "5.1.6",
+<<<<<<< HEAD
 		"vite": "4.4.2",
+=======
+		"vite": "4.4.1",
+>>>>>>> 379e5ead875f482852fe28f8389370328ce10bf1
 		"vite-plugin-solid": "2.7.0"
 	}
 }
