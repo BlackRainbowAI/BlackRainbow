@@ -10,6 +10,8 @@ interface NodeListOf<TNode extends Node> extends NodeList {
 		// rome-ignore lint/suspicious/noExplicitAny:
 		thisArg?: any
 	): void;
+
+	// rome-ignore lint/suspicious/noRedeclare:
 	[index: number]: TNode;
 }
 
