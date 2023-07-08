@@ -15,7 +15,7 @@ export default defineConfig(async () => ({
 	},
 	vite: {
 		build: {
-			sourcemap: true
-		}
-	}
+			sourcemap: true,
+		},
+	},
 }));
