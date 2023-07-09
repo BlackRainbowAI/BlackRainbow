@@ -17,31 +17,30 @@ const refresh = async () => {
 			async () =>
 				(
 					await DOM.getElement(
-						'[data-testid="aircraft-panel__header"] button.rounded-md'
+						'[data-testid="aircraft-panel__header"] button.rounded-md',
 					)
 				).forEach((el) => el.click()),
-			25000
+			25000,
 		);
 
 		const focus = await DOM.getElement(
-			'[data-testid="most-tracked-flights-widget"] [data-testid="list-wrapper"] > div'
+			'[data-testid="most-tracked-flights-widget"] [data-testid="list-wrapper"] > div',
 		);
 
 		const id = Math.floor(Math.random() * focus.length);
 
 		(await DOM.getElement('[data-testid="map-controls__zoom-in"]')).forEach(
-			(el) =>
-				setTimeout(() => {
+			(el) => setTimeout(() => {
 					el?.click();
 					setTimeout(() => el?.click(), 1000);
-				}, 1000)
+				}, 1000),
 		);
 
 		focus.item(id)?.click();
 
 		(
 			await DOM.getElement(
-				'.ui-icon.ui-icon-closethick,[data-testid="aircraft__not-live-flight"] [data-testid="base-button"]'
+				'.ui-icon.ui-icon-closethick,[data-testid="aircraft__not-live-flight"] [data-testid="base-button"]',
 			)
 		).forEach((el) => {
 			el?.click();
@@ -50,7 +49,7 @@ const refresh = async () => {
 		setTimeout(async () => {
 			(
 				await DOM.getElement(
-					'[data-testid="aircraft__follow-flight-button"]:not(.text-yellow-500)'
+					'[data-testid="aircraft__follow-flight-button"]:not(.text-yellow-500)',
 				)
 			)
 				.item(0)
@@ -58,7 +57,7 @@ const refresh = async () => {
 
 			(
 				await DOM.getElement(
-					'[data-testid="aircraft-panel__more__hide-not-selected-btn"] [aria-checked="false"]'
+					'[data-testid="aircraft-panel__more__hide-not-selected-btn"] [aria-checked="false"]',
 				)
 			).forEach((el) => el?.parentElement?.click());
 		}, 3000);

@@ -22,10 +22,7 @@ const refresh = async () => {
 					.length === 0
 			) {
 				(
-					await DOM.getElement(
-						".js-stream-item-content",
-						focus.item(id)
-					)
+					await DOM.getElement(".js-stream-item-content", focus.item(id))
 				).forEach(async (el) => {
 					el?.click();
 				});
@@ -59,7 +56,7 @@ setInterval(
 		(await DOM.getElement(".btd-clear-column-link")).forEach((el) => {
 			el?.click();
 		}),
-	55000
+	55000,
 );
 
 setInterval(async () => {
@@ -78,19 +75,16 @@ setInterval(async () => {
 		async () =>
 			(
 				await DOM.getElement(
-					".js-tweet-detail.tweet-detail-wrapper .js-tweet-translation-text.tweet-translation-text"
+					".js-tweet-detail.tweet-detail-wrapper .js-tweet-translation-text.tweet-translation-text",
 				)
 			).forEach((el) => {
 				const position = el.getBoundingClientRect();
 
-				if (
-					position.top >= 0 &&
-					position.bottom <= window.innerHeight
-				) {
+				if (position.top >= 0 && position.bottom <= window.innerHeight) {
 					el.scrollIntoView();
 				}
 			}),
-		3000
+		3000,
 	);
 }, 15000);
 
