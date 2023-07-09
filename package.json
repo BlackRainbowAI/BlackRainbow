@@ -1,17 +1,17 @@
 {
 	"name": "blackrainbow",
 	"version": "0.0.1",
-	"type": "module",
 	"description": "BlackRainbow tauri.",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/BlackRainbowAI/npm.git"
-	},
 	"homepage": "https://github.com/BlackRainbowAI/npm#readme",
 	"bugs": {
 		"url": "https://github.com/BlackRainbowAI/npm/issues"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/BlackRainbowAI/npm.git"
+	},
 	"license": "MIT",
+	"type": "module",
 	"scripts": {
 		"build": "lightrix build 'src/**/*.ts' -c config/esbuild.ts",
 		"tauri": "tauri"

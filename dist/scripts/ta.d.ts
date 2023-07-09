@@ -1,4 +1,4 @@
-/// <reference types="node" resolution-mode="require"/>
+/// <reference types="node" />
 declare global {
     interface Window {
         interval: NodeJS.Timer;
