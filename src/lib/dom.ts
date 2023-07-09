@@ -2,13 +2,9 @@ interface NodeListOf<TNode extends Node> extends NodeList {
 	item(index: number): TNode;
 
 	forEach(
-		callbackfn: (
-			value: TNode,
-			key: number,
-			parent: NodeListOf<TNode>
-		) => void,
+		callbackfn: (value: TNode, key: number, parent: NodeListOf<TNode>) => void,
 		// rome-ignore lint/suspicious/noExplicitAny:
-		thisArg?: any
+		thisArg?: any,
 	): void;
 
 	// rome-ignore lint/suspicious/noRedeclare:
@@ -18,7 +14,7 @@ interface NodeListOf<TNode extends Node> extends NodeList {
 export default {
 	getElement: async (
 		selector: string,
-		parent: HTMLElement | Document = document
+		parent: HTMLElement | Document = document,
 	): Promise<NodeListOf<HTMLElement>> => {
 		return parent.querySelectorAll(selector);
 	},
