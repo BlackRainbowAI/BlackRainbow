@@ -1,0 +1,52 @@
+html body .link-complex-target,
+html body a.link-complex .hash,
+html body a.link-complex,
+html body a.link-complex .username,
+html body a.link-complex > *,
+html body a.link-complex,
+html body a.account-link,
+html body .js-other-replies-link.other-replies-link,
+html body .tweet-text a.url-ext[href],
+html body .txt-mute a:not(:hover):not(:focus) {
+	color: white;
+	-webkit-text-decoration-color: #2563eb !important;
+	text-decoration-color: #2563eb !important;
+	text-decoration: 1px #2563eb underline !important;
+	text-underline-offset: 2px !important;
+}
+
+html body .media-sensitive {
+	background: rgb(30, 30, 30);
+}
+
+html body {
+	font-family: "Albert Sans", sans-serif !important;
+}
+
+html body .js-app-columns-container.app-columns-container,
+html body .column-scroller {
+	overflow: hidden !important;
+}
+
+html body .column-drag-handle,
+html body .column-number,
+html body .js-column-message,
+html body .Notification.Notification--red,
+html body .column-header-links,
+html body .tweet-detail-actions,
+html body .tweet-actions,
+html body [data-testid="logged-in-view"] + div {
+	display: none !important;
+}
+
+html body .tweet-translation-original-text {
+	font-size: 14px !important;
+}
+
+html body .tweet-translation-attribution-text {
+	font-size: 12px !important;
+}
+
+html body .js-tweet-translation-text {
+	color: #f64200;
+}
