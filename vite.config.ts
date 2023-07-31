@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 
-export default defineConfig(async () => ({
+export default defineConfig({
 	clearScreen: false,
 	server: {
 		port: 1420,
@@ -13,9 +13,4 @@ export default defineConfig(async () => ({
 		minify: process.env.TAURI_DEBUG ? false : "esbuild",
 		sourcemap: !!process.env.TAURI_DEBUG,
 	},
-	vite: {
-		build: {
-			sourcemap: true,
-		},
-	},
-}));
+});
