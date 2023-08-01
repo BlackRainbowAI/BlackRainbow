@@ -13,7 +13,7 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"build": "lightrix build 'src/**/*.ts' -c config/esbuild.ts",
+		"build": "lightrix build 'src/**/*.ts' -c config/ESBuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
