@@ -2,6 +2,9 @@
 name = "tauri"
 version = "0.0.1"
 
+[build]
+target-dir = "Target"
+
 [build-dependencies]
 tauri-build = { version = "1.4.0", features = [] }
 
