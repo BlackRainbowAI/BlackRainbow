@@ -1,4 +1,4 @@
-import DOM from "../Lib/DOM.js";
+import DOM from "../Library/DOM.js";
 
 declare global {
 	interface Window {
