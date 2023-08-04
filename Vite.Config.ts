@@ -6,12 +6,17 @@ export default defineConfig({
 	server: {
 		port: 1420,
 		strictPort: true,
+		hmr: {
+			overlay: false,
+		},
 	},
 	envPrefix: ["VITE_", "TAURI_"],
 	build: {
-		outDir: "Dist",
+		outDir: "Build",
 		target:
-			process.env['TAURI_PLATFORM'] === "windows" ? "chrome105" : "safari13",
+			process.env["TAURI_PLATFORM"] === "windows"
+				? "chrome105"
+				: "safari13",
 		minify: process.env["TAURI_DEBUG"] ? false : "esbuild",
 		sourcemap: !!process.env["TAURI_DEBUG"],
 	},
