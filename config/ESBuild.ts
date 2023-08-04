@@ -14,13 +14,13 @@ export default {
 	plugins: [
 		{
 			name: "clean-dist",
-			setup(build: PluginBuild) {
-				build.onStart(async () => {
+			setup(Build: PluginBuild) {
+				Build.onStart(async () => {
 					try {
 						await rm(outDir, {
 							recursive: true,
 						});
-					} catch (_error) {}
+					} catch (_Error) {}
 				});
 			},
 		},
