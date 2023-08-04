@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
+	srcDir: "./Source",
 	clearScreen: false,
 	server: {
 		port: 1420,
