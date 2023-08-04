@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-	srcDir: "./Source",
+	publicDir: "./Public",
 	clearScreen: false,
 	server: {
 		port: 1420,
@@ -9,6 +9,7 @@ export default defineConfig({
 	},
 	envPrefix: ["VITE_", "TAURI_"],
 	build: {
+		outDir: "Dist",
 		target:
 			process.env['TAURI_PLATFORM'] === "windows" ? "chrome105" : "safari13",
 		minify: process.env["TAURI_DEBUG"] ? false : "esbuild",
