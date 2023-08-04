@@ -21,9 +21,9 @@
 			"copyright": "Copyright (c) 2022-2023 Nikola Hristov. All rights reserved.",
 			"externalBin": [],
 			"icon": [
-				"src/img/16x16.png",
-				"src/img/32x32.png",
-				"src/img/icon.ico"
+				"Src/img/16x16.png",
+				"Src/img/32x32.png",
+				"Src/img/icon.ico"
 			],
 			"identifier": "media.blackrainbow.app",
 			"longDescription": "",
@@ -37,8 +37,8 @@
 				"digestAlgorithm": "sha256",
 				"timestampUrl": "",
 				"wix": {
-					"bannerPath": "src/img/banner.png",
-					"dialogImagePath": "src/img/dialogImage.png"
+					"bannerPath": "Src/img/banner.png",
+					"dialogImagePath": "Src/img/dialogImage.png"
 				}
 			}
 		},
@@ -71,7 +71,7 @@
 		},
 		"systemTray": {
 			"iconAsTemplate": true,
-			"iconPath": "src/img/icon.ico"
+			"iconPath": "Src/img/icon.ico"
 		},
 		"updater": {
 			"active": false
