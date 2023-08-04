@@ -1,5 +1,5 @@
 interface NodeListOf<TNode extends Node> extends NodeList {
-	item(index: number): TNode;
+	item(Index: number): TNode;
 
 	forEach(
 		callbackfn: (
@@ -11,15 +11,14 @@ interface NodeListOf<TNode extends Node> extends NodeList {
 		thisArg?: any
 	): void;
 
-	// rome-ignore lint/suspicious/noRedeclare:
 	[index: number]: TNode;
 }
 
 export default {
 	getElement: async (
-		selector: string,
-		parent: HTMLElement | Document = document
+		Selector: string,
+		Parent: HTMLElement | Document = document
 	): Promise<NodeListOf<HTMLElement>> => {
-		return parent.querySelectorAll(selector);
+		return Parent.querySelectorAll(Selector);
 	},
 };
