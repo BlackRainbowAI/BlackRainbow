@@ -8,6 +8,6 @@
 			}
 		]
 	},
-	"extends": "@lightrix/config/base/ts",
+	"extends": "@lightrix/configuration/base/ts",
 	"include": ["src"]
 }
