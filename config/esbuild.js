@@ -1,6 +1,6 @@
 import { copy } from "esbuild-plugin-copy";
 import { rm } from "fs/promises";
-const outDir = "dist";
+const outDir = "Target";
 export default {
     format: "esm",
     minify: true,
@@ -10,7 +10,7 @@ export default {
     target: ["edge104", "esnext"],
     plugins: [
         {
-            name: "clean-dist",
+            name: "clean-Target",
             setup(build) {
                 build.onStart(async () => {
                     try {

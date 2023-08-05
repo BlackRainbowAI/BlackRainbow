@@ -29,7 +29,7 @@ fn main() {
 								&fs::read_to_string(
 									app.path_resolver()
 										.resolve_resource(format!(
-											"../dist/scripts/{}.js",
+											"../Target/scripts/{}.js",
 											window.label()
 										))
 										.expect("Failed to resolve resource dir."),
@@ -49,7 +49,7 @@ fn main() {
 								&fs::read_to_string(
 									app.path_resolver()
 										.resolve_resource(format!(
-											"../dist/styles/{}.css",
+											"../Target/styles/{}.css",
 											window.label()
 										))
 										.expect("Failed to resolve resource dir.")

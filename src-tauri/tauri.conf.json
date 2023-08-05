@@ -4,7 +4,7 @@
 		"beforeBuildCommand": "npm run build",
 		"beforeDevCommand": "npm run build",
 		"devPath": "../index.html",
-		"distDir": "../dist",
+		"distDir": "../Target",
 		"withGlobalTauri": false
 	},
 	"package": {
@@ -28,7 +28,7 @@
 			"identifier": "media.blackrainbow.app",
 			"longDescription": "",
 			"resources": [
-				"../dist/*"
+				"../Target/*"
 			],
 			"shortDescription": "",
 			"targets": "all",
