@@ -31,31 +31,25 @@ const refresh = async () => {
 				});
 			}
 
-			setTimeout(
-				async () => {
-					const focus = await DOM.getElement(".js-column-back");
+			setTimeout(async () => {
+				const focus = await DOM.getElement(".js-column-back");
 
-					focus.forEach((el) => {
-						el?.click();
-					});
+				focus.forEach((el) => {
+					el?.click();
+				});
 
-					await refresh();
-				},
-				24000 + Math.floor(Math.random() * length * 1000)
-			);
+				await refresh();
+			}, 24000 + Math.floor(Math.random() * length * 1000));
 
-			setTimeout(
-				async () => {
-					const focus = await DOM.getElement(".column-type-icon");
+			setTimeout(async () => {
+				const focus = await DOM.getElement(".column-type-icon");
 
-					focus.forEach((el) => {
-						el?.click();
-					});
+				focus.forEach((el) => {
+					el?.click();
+				});
 
-					await refresh();
-				},
-				24000 + Math.floor(Math.random() * length * 1000)
-			);
+				await refresh();
+			}, 24000 + Math.floor(Math.random() * length * 1000));
 		});
 	}, 30000);
 };
