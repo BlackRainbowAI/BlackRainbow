@@ -28,7 +28,7 @@ export default {
 			resolveFrom: "out",
 			assets: [
 				{
-					from: "./Src/styles/*.css",
+					from: "./Source/styles/*.css",
 					to: "./styles/",
 				},
 			],
