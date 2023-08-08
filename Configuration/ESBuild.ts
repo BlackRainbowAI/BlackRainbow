@@ -1,6 +1,6 @@
 import type { BuildOptions, PluginBuild } from "esbuild";
-import { copy } from "esbuild-plugin-copy";
-import { rm } from "fs/promises";
+import { copy as Copy } from "esbuild-plugin-copy";
+import { rm as Remove } from "fs/promises";
 
 const outDir = "Target";
 
@@ -13,18 +13,17 @@ export default {
 	target: ["edge104", "esnext"],
 	plugins: [
 		{
-			name: "clean-Target",
-			setup(Build: PluginBuild) {
+			name: "Target",
+			setup: (Build: PluginBuild) =>
 				Build.onStart(async () => {
 					try {
-						await rm(outDir, {
+						await Remove(outDir, {
 							recursive: true,
 						});
 					} catch (_Error) {}
-				});
-			},
+				}),
 		},
-		copy({
+		Copy({
 			resolveFrom: "out",
 			assets: [
 				{

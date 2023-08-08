@@ -1,6 +1,6 @@
 {
 	"name": "blackrainbow",
-	"version": "0.0.1",
+	"version": "2.0.0",
 	"description": "BlackRainbow tauri.",
 	"homepage": "https://github.com/BlackRainbowAI/npm#readme",
 	"bugs": {
@@ -24,10 +24,10 @@
 		"@lightrix/configuration": "0.0.1",
 		"@lightrix/script": "0.0.1",
 		"@tauri-apps/cli": "1.4.0",
-		"@types/node": "20.4.7",
+		"@types/node": "20.4.8",
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript": "5.1.6",
-		"vite": "4.4.8",
+		"vite": "4.4.9",
 		"vite-plugin-solid": "2.7.0"
 	}
 }
