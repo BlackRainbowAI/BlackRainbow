@@ -10,7 +10,6 @@
 		"type": "git",
 		"url": "git+https://github.com/BlackRainbowAI/npm.git"
 	},
-	"license": "MIT",
 	"type": "module",
 	"scripts": {
 		"build": "lightrix build 'Source/**/*.ts' -c config/ESBuild.ts",
@@ -18,11 +17,9 @@
 	},
 	"dependencies": {
 		"@tauri-apps/api": "1.4.0",
-		"solid-js": "1.7.10"
+		"solid-js": "1.7.11"
 	},
 	"devDependencies": {
-		"@lightrix/configuration": "0.0.1",
-		"@lightrix/script": "0.0.1",
 		"@tauri-apps/cli": "1.4.0",
 		"@types/node": "20.4.9",
 		"esbuild-plugin-copy": "2.1.1",
