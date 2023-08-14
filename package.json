@@ -12,7 +12,7 @@
 	},
 	"type": "module",
 	"scripts": {
-		"build": "lightrix build 'Source/**/*.ts' -c config/ESBuild.ts",
+		"build": "lightrix build 'Source/**/*.ts' -c config/esbuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
@@ -21,7 +21,7 @@
 	},
 	"devDependencies": {
 		"@tauri-apps/cli": "1.4.0",
-		"@types/node": "20.4.9",
+		"@types/node": "20.5.0",
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript": "5.1.6",
 		"vite": "4.4.9",
