@@ -1,7 +1,7 @@
 {
     "tasks": [
         {
-            "detail": "lightrix build 'Source/**/*.ts' -c config/esbuild.ts",
+            "detail": "TypeScriptESBuild 'Source/**/*.ts' -es Configuration/ESBuild.ts",
             "group": "build",
             "label": "npm:build",
             "script": "build",

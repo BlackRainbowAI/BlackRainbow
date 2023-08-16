@@ -13,7 +13,7 @@
 	"license": "MIT",
 	"type": "module",
 	"scripts": {
-		"build": "lightrix build 'Source/**/*.ts' -c config/esbuild.ts",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts' -es Configuration/ESBuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
@@ -25,7 +25,7 @@
 		"@types/node": "20.5.0",
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript": "5.1.6",
-		"typescript-esbuild": "workspace:*",
+		"typescript-esbuild": "0.1.13",
 		"vite": "4.4.9",
 		"vite-plugin-solid": "2.7.0"
 	}
