@@ -10,6 +10,7 @@
 		"type": "git",
 		"url": "git+https://github.com/BlackRainbowAI/npm.git"
 	},
+	"license": "MIT",
 	"type": "module",
 	"scripts": {
 		"build": "lightrix build 'Source/**/*.ts' -c config/esbuild.ts",
