@@ -27,9 +27,7 @@
 			],
 			"identifier": "media.blackrainbow.app",
 			"longDescription": "",
-			"resources": [
-				"../Target/*"
-			],
+			"resources": ["../Target/*"],
 			"shortDescription": "",
 			"targets": "all",
 			"windows": {
@@ -49,23 +47,17 @@
 				{
 					"domain": "www.twitter.com",
 					"enableTauriAPI": true,
-					"windows": [
-						"ta"
-					]
+					"windows": ["ta"]
 				},
 				{
 					"domain": "tweetdeck.twitter.com",
 					"enableTauriAPI": true,
-					"windows": [
-						"ta"
-					]
+					"windows": ["ta"]
 				},
 				{
 					"domain": "www.flightradar24.com",
 					"enableTauriAPI": true,
-					"windows": [
-						"fa"
-					]
+					"windows": ["fa"]
 				}
 			]
 		},
