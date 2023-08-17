@@ -1,6 +1,7 @@
 {
 	"name": "blackrainbow",
 	"version": "0.0.1",
+	"private": "false",
 	"description": "BlackRainbow tauri.",
 	"homepage": "https://github.com/BlackRainbowAI/npm#readme",
 	"bugs": {
@@ -11,6 +12,11 @@
 		"url": "git+https://github.com/BlackRainbowAI/npm.git"
 	},
 	"license": "MIT",
+	"author": {
+		"name": "Nikola Hristov",
+		"email": "nikola@nikolahristov.tech",
+		"url": "https://nikolahristov.tech"
+	},
 	"type": "module",
 	"scripts": {
 		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts' -es Configuration/ESBuild.ts",
@@ -28,5 +34,8 @@
 		"typescript-esbuild": "0.1.13",
 		"vite": "4.4.9",
 		"vite-plugin-solid": "2.7.0"
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
