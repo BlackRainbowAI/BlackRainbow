@@ -1,7 +1,7 @@
 {
 	"name": "blackrainbow",
 	"version": "0.0.1",
-	"private": "false",
+	"private": false,
 	"description": "BlackRainbow tauri.",
 	"homepage": "https://github.com/BlackRainbowAI/npm#readme",
 	"bugs": {
