@@ -3,13 +3,13 @@
 	"version": "0.0.1",
 	"private": false,
 	"description": "BlackRainbow tauri.",
-	"homepage": "https://github.com/BlackRainbowAI/npm#readme",
+	"homepage": "https://github.com/BlackRainbowAI/NPM#readme",
 	"bugs": {
-		"url": "https://github.com/BlackRainbowAI/npm/issues"
+		"url": "https://github.com/BlackRainbowAI/NPM/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/BlackRainbowAI/npm.git"
+		"url": "git+https://github.com/BlackRainbowAI/NPM.git"
 	},
 	"license": "MIT",
 	"author": {
