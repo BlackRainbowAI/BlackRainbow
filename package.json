@@ -28,9 +28,9 @@
 	},
 	"devDependencies": {
 		"@tauri-apps/cli": "1.4.0",
-		"@types/node": "20.5.3",
+		"@types/node": "20.5.5",
 		"esbuild-plugin-copy": "2.1.1",
-		"typescript": "5.1.6",
+		"typescript": "5.2.2",
 		"typescript-esbuild": "0.1.14",
 		"vite": "4.4.9",
 		"vite-plugin-solid": "2.7.0"
