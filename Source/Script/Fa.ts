@@ -23,11 +23,11 @@ const refresh = async () => {
 			25000
 		);
 
-		const focus = await DOM.getElement(
+		const Focus = await DOM.getElement(
 			'[data-testid="most-tracked-flights-widget"] [data-testid="list-wrapper"] > div'
 		);
 
-		const id = Math.floor(Math.random() * focus.length);
+		const Identifier = Math.floor(Math.random() * Focus.length);
 
 		(await DOM.getElement('[data-testid="map-controls__zoom-in"]')).forEach(
 			(el) =>
@@ -37,7 +37,7 @@ const refresh = async () => {
 				}, 1000)
 		);
 
-		focus.item(id)?.click();
+		Focus.item(Identifier)?.click();
 
 		(
 			await DOM.getElement(
