@@ -1,10 +1,2 @@
-declare const _default: {
-    format: "esm";
-    minify: true;
-    outdir: string;
-    bundle: true;
-    platform: "browser";
-    target: string[];
-    plugins: import("esbuild").Plugin[];
-};
+declare const _default: Type;
 export default _default;
