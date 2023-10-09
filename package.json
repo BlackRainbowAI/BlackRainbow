@@ -27,8 +27,8 @@
 		"solid-js": "1.7.12"
 	},
 	"devDependencies": {
-		"@tauri-apps/cli": "1.5.1",
-		"@types/node": "20.8.2",
+		"@tauri-apps/cli": "1.5.2",
+		"@types/node": "20.8.3",
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript-esbuild": "0.2.14",
 		"vite": "4.4.11",
