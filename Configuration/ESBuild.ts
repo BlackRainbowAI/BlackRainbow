@@ -1,30 +1,31 @@
-import type { PluginBuild, BuildOptions } from "esbuild";
-
-import { copy as Copy } from "esbuild-plugin-copy";
-import { rm as Remove } from "fs/promises";
-
-const outDir = "Target";
-
+/**
+ * @module ESBuild
+ *
+ */
 export default {
 	format: "esm",
 	minify: true,
-	outdir: outDir,
+	outdir: "Target",
 	bundle: true,
 	platform: "browser",
 	target: ["edge104", "esnext"],
 	plugins: [
 		{
 			name: "Target",
-			setup: (Build: PluginBuild) =>
-				Build.onStart(async () => {
+			setup: ({ onStart, initialOptions: { outdir } }) =>
+				onStart(async () => {
 					try {
-						await Remove(outDir, {
-							recursive: true,
-						});
+						outdir
+							? await (
+									await import("fs/promises")
+							  ).rm(outdir, {
+									recursive: true,
+							  })
+							: {};
 					} catch (_Error) {}
 				}),
 		},
-		Copy({
+		(await import("esbuild-plugin-copy")).copy({
 			resolveFrom: "out",
 			assets: [
 				{
@@ -34,4 +35,6 @@ export default {
 			],
 		}),
 	],
-} satisfies Type;
+} satisfies BuildOptions;
+
+import type { BuildOptions } from "esbuild";

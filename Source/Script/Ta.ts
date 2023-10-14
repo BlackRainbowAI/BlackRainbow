@@ -1,5 +1,3 @@
-import DOM from "../Library/DOM.js";
-
 declare global {
 	interface Window {
 		interval: NodeJS.Timer;
@@ -12,20 +10,17 @@ const refresh = async () => {
 	window.interval = setInterval(async () => {
 		clearInterval(window.interval);
 
-		(await DOM.getElement(".js-column")).forEach(async (el) => {
-			const focus = await DOM.getElement(".js-stream-item", el);
+		(await getElement(".js-column")).forEach(async (el) => {
+			const focus = await getElement(".js-stream-item", el);
 			const length = focus.length;
 			const id = Math.floor(Math.random() * length);
 
 			if (
-				(await DOM.getElement(".btd-content-warning", focus.item(id)))
+				(await getElement(".btd-content-warning", focus.item(id)))
 					.length === 0
 			) {
 				(
-					await DOM.getElement(
-						".js-stream-item-content",
-						focus.item(id)
-					)
+					await getElement(".js-stream-item-content", focus.item(id))
 				).forEach(async (el) => {
 					el?.click();
 				});
@@ -33,7 +28,7 @@ const refresh = async () => {
 
 			setTimeout(
 				async () => {
-					const focus = await DOM.getElement(".js-column-back");
+					const focus = await getElement(".js-column-back");
 
 					focus.forEach((el) => {
 						el?.click();
@@ -46,7 +41,7 @@ const refresh = async () => {
 
 			setTimeout(
 				async () => {
-					const focus = await DOM.getElement(".column-type-icon");
+					const focus = await getElement(".column-type-icon");
 
 					focus.forEach((el) => {
 						el?.click();
@@ -62,14 +57,14 @@ const refresh = async () => {
 
 setInterval(
 	async () =>
-		(await DOM.getElement(".btd-clear-column-link")).forEach((el) => {
+		(await getElement(".btd-clear-column-link")).forEach((el) => {
 			el?.click();
 		}),
 	55000
 );
 
 setInterval(async () => {
-	const translations = await DOM.getElement(".js-translate-call-to-action");
+	const translations = await getElement(".js-translate-call-to-action");
 
 	let index = 0;
 
@@ -83,7 +78,7 @@ setInterval(async () => {
 	setTimeout(
 		async () =>
 			(
-				await DOM.getElement(
+				await getElement(
 					".js-tweet-detail.tweet-detail-wrapper .js-tweet-translation-text.tweet-translation-text"
 				)
 			).forEach((el) => {
@@ -101,3 +96,7 @@ setInterval(async () => {
 }, 15000);
 
 await refresh();
+
+export const {
+	default: { getElement },
+} = await import("../Library/DOM.js");
