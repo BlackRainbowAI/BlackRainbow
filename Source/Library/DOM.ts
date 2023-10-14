@@ -7,7 +7,7 @@ interface NodeListOf<TNode extends Node> extends NodeList {
 			key: number,
 			parent: NodeListOf<TNode>
 		) => void,
-		// rome-ignore lint/suspicious/noExplicitAny:
+		// biome-ignore lint/suspicious/noExplicitAny:
 		thisArg?: any
 	): void;
 
