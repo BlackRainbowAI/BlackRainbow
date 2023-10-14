@@ -1,6 +1,4 @@
-import { defineConfig } from "vite";
-
-export default defineConfig({
+export default (await import("vite")).defineConfig({
 	publicDir: "./Public",
 	clearScreen: false,
 	server: {
