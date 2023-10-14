@@ -18,7 +18,6 @@ export default {
 	getElement: async (
 		Selector: string,
 		Parent: HTMLElement | Document = document
-	): Promise<NodeListOf<HTMLElement>> => {
-		return Parent.querySelectorAll(Selector);
-	},
+	): Promise<NodeListOf<HTMLElement>> =>
+		Parent.querySelectorAll<HTMLElement>(Selector),
 };
