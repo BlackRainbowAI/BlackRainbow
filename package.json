@@ -31,7 +31,7 @@
 		"@types/node": "20.10.0",
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript-esbuild": "0.3.1",
-		"vite": "5.0.2",
+		"vite": "5.0.3",
 		"vite-plugin-solid": "2.7.2"
 	},
 	"publishConfig": {
