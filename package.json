@@ -28,10 +28,10 @@
 	},
 	"devDependencies": {
 		"@tauri-apps/cli": "2.0.0-alpha.18",
-		"@types/node": "20.10.4",
+		"@types/node": "20.10.5",
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript-esbuild": "0.3.3",
-		"vite": "5.0.9",
+		"vite": "5.0.10",
 		"vite-plugin-solid": "2.8.0"
 	},
 	"publishConfig": {
