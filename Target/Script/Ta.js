@@ -22,7 +22,7 @@ var s = async () => {
 						(await n(".js-stream-item-content", t.item(o))).forEach(
 							async (i) => {
 								i?.click();
-							},
+							}
 						),
 						setTimeout(
 							async () => {
@@ -31,7 +31,7 @@ var s = async () => {
 								}),
 									await s();
 							},
-							24e3 + Math.floor(Math.random() * a * 1e3),
+							24e3 + Math.floor(Math.random() * a * 1e3)
 						),
 						setTimeout(
 							async () => {
@@ -40,7 +40,7 @@ var s = async () => {
 								}),
 									await s();
 							},
-							24e3 + Math.floor(Math.random() * a * 1e3),
+							24e3 + Math.floor(Math.random() * a * 1e3)
 						);
 				});
 		}, 3e4));
@@ -50,7 +50,7 @@ setInterval(
 		(await n(".btd-clear-column-link")).forEach((e) => {
 			e?.click();
 		}),
-	55e3,
+	55e3
 );
 setInterval(async () => {
 	let e = await n(".js-translate-call-to-action"),
@@ -62,7 +62,7 @@ setInterval(async () => {
 			async () =>
 				(
 					await n(
-						".js-tweet-detail.tweet-detail-wrapper .js-tweet-translation-text.tweet-translation-text",
+						".js-tweet-detail.tweet-detail-wrapper .js-tweet-translation-text.tweet-translation-text"
 					)
 				).forEach((a) => {
 					let o = a.getBoundingClientRect();
@@ -70,7 +70,7 @@ setInterval(async () => {
 						o.bottom <= window.innerHeight &&
 						a.scrollIntoView();
 				}),
-			3e3,
+			3e3
 		);
 }, 15e3);
 await s();
