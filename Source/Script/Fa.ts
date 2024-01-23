@@ -28,7 +28,8 @@ const refresh = async () => {
 		const Identifier = Math.floor(Math.random() * Focus.length);
 
 		(await getElement('[data-testid="map-controls__zoom-in"]')).forEach(
-			(el) => setTimeout(() => {
+			(el) =>
+				setTimeout(() => {
 					el?.click();
 					setTimeout(() => el?.click(), 1000);
 				}, 1000),

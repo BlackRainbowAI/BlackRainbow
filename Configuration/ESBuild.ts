@@ -2,7 +2,7 @@
  * @module ESBuild
  *
  */
-export default ({
+export default {
 	format: "esm",
 	minify: true,
 	outdir: "Target",
@@ -16,9 +16,12 @@ export default ({
 				onStart(async () => {
 					try {
 						outdir
-							? await (await import("fs/promises")).rm(outdir, {
-									recursive: true,
-							  })
+							? await (await import("node:fs/promises")).rm(
+									outdir,
+									{
+										recursive: true,
+									},
+							  )
 							: {};
 					} catch (_Error) {}
 				}),
@@ -33,6 +36,6 @@ export default ({
 			],
 		}),
 	],
-} satisfies BuildOptions);
+} satisfies BuildOptions;
 
 import type { BuildOptions } from "esbuild";
