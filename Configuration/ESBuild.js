@@ -23,7 +23,9 @@ export default {
 									},
 							  )
 							: {};
-					} catch (_Error) {}
+					} catch (_Error) {
+						console.log(_Error);
+					}
 				}),
 		},
 		(await import("esbuild-plugin-copy")).copy({
