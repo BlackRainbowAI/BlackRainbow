@@ -6,15 +6,19 @@ version = "0.0.1"
 target-dir = "Target"
 
 [build-dependencies]
-tauri-build = { version = "1.4.0", features = [] }
+tauri-build = { version = "1.5.1", features = [] }
 
 [dependencies]
-tauri = { version = "1.4.1", features = ["api-all", "devtools", "system-tray"] }
-serde = { version = "1.0.181", features = ["derive"] }
-serde_json = "1.0.104"
+tauri = { version = "1.6.0", features = ["api-all", "devtools", "system-tray"] }
+serde = { version = "1.0.197", features = ["derive"] }
+serde_json = "1.0.114"
 
 [features]
 custom-protocol = ["tauri/custom-protocol"]
 
 [target."cfg(windows)".dependencies]
 winapi = { version = "0.3.9", features = ["shellscalingapi"] }
+
+[[bin]]
+name = "Build"
+path = "build.rs"
