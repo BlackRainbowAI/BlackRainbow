@@ -19,7 +19,7 @@
 	},
 	"type": "module",
 	"scripts": {
-		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts' -es Configuration/ESBuild.ts",
+		"prepublishOnly": "TypeScriptESBuild 'Source/**/*.ts' -ES Configuration/ESBuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
