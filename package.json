@@ -25,7 +25,7 @@
 	},
 	"dependencies": {
 		"@tauri-apps/api": "1.5.3",
-		"solid-js": "1.8.15"
+		"solid-js": "1.8.16"
 	},
 	"devDependencies": {
 		"@tauri-apps/cli": "2.0.0-beta.10",
@@ -33,7 +33,7 @@
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript-document": "0.0.3",
 		"typescript-esbuild": "0.4.4",
-		"vite": "5.1.6",
+		"vite": "5.2.2",
 		"vite-plugin-solid": "2.10.2"
 	},
 	"publishConfig": {
