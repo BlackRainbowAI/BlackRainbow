@@ -31,7 +31,7 @@
 		"@tauri-apps/cli": "2.0.0-beta.11",
 		"@types/node": "20.11.30",
 		"esbuild-plugin-copy": "2.1.1",
-		"typescript-document": "0.0.4",
+		"typescript-document": "0.0.5",
 		"typescript-esbuild": "0.4.5",
 		"vite": "5.2.2",
 		"vite-plugin-solid": "2.10.2"
