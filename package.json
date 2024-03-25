@@ -3,19 +3,19 @@
 	"version": "0.0.1",
 	"private": false,
 	"description": "BlackRainbow tauri.",
-	"homepage": "https://github.com/BlackRainbowAI/NPM#readme",
+	"homepage": "HTTPS://GitHub.Com/BlackRainbowAI/NPM#readme",
 	"bugs": {
-		"url": "https://github.com/BlackRainbowAI/NPM/issues"
+		"url": "HTTPS://GitHub.Com/BlackRainbowAI/NPM/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/BlackRainbowAI/NPM.git"
+		"url": "git+HTTPS://GitHub.Com/BlackRainbowAI/NPM.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "Nikola R. Hristov",
 		"email": "Nikola@Playform.Cloud",
-		"url": "https://NikolaHristov.Tech"
+		"url": "HTTPS://NikolaHristov.Tech"
 	},
 	"type": "module",
 	"scripts": {

@@ -126,7 +126,7 @@ For answers to common questions about this code of conduct, see the FAQ at
 
 [homepage]: HTTPS://WWW.Contributor-Covenant.Org
 [v2.1]: HTTPS://WWW.Contributor-Covenant.Org/version/2/1/code_of_conduct.html
-[Mozilla CoC]: https://github.com/mozilla/diversity
+[Mozilla CoC]: HTTPS://GitHub.Com/mozilla/diversity
 [FAQ]: HTTPS://WWW.Contributor-Covenant.Org/faq
 [translations]: HTTPS://WWW.Contributor-Covenant.Org/translations
 
