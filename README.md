@@ -1,4 +1,4 @@
-# [BlackRainbow] 🐂
+# 🐂 [BlackRainbow]
 
 BlackRainbow tauri.
 
