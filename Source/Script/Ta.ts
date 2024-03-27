@@ -21,9 +21,7 @@ const refresh = async () => {
 			) {
 				(
 					await getElement(".js-stream-item-content", focus.item(id))
-				).forEach(async (el) => {
-					el?.click();
-				});
+				).forEach((el) => el?.click());
 			}
 
 			setTimeout(
