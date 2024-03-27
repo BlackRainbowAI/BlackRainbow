@@ -1,6 +1,6 @@
 # 🐂 [BlackRainbow]
 
-BlackRainbow tauri.
+BlackRainbow Tauri.
 
 ## Changelog
 
