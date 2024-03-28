@@ -14,8 +14,8 @@
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
 		"name": "Nikola R. Hristov",
-		"email": "Nikola@Playform.Cloud",
-		"url": "https://NikolaHristov.Tech"
+		"email": "Nikola@playform.cloud",
+		"url": "https://nikolahristov.tech"
 	},
 	"type": "module",
 	"scripts": {
@@ -31,8 +31,8 @@
 		"@tauri-apps/cli": "2.0.0-beta.11",
 		"@types/node": "20.11.30",
 		"esbuild-plugin-copy": "2.1.1",
-		"typescript-document": "0.0.6",
-		"typescript-esbuild": "0.4.8",
+		"typescript-document": "0.0.7",
+		"typescript-esbuild": "0.4.9",
 		"vite": "5.2.6",
 		"vite-plugin-solid": "2.10.2"
 	},
