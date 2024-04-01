@@ -3,13 +3,13 @@
 	"version": "0.0.1",
 	"private": false,
 	"description": "BlackRainbow tauri.",
-	"homepage": "https://GitHub.Com/BlackRainbowAI/NPM#readme",
+	"homepage": "https://github.com/BlackRainbowAI/NPM#readme",
 	"bugs": {
-		"url": "https://GitHub.Com/BlackRainbowAI/NPM/issues"
+		"url": "https://github.com/BlackRainbowAI/NPM/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://GitHub.Com/BlackRainbowAI/NPM.git"
+		"url": "git+https://github.com/BlackRainbowAI/NPM.git"
 	},
 	"license": "SEE LICENSE IN LICENSE",
 	"author": {
@@ -31,12 +31,12 @@
 		"@tauri-apps/cli": "2.0.0-beta.11",
 		"@types/node": "20.12.2",
 		"esbuild-plugin-copy": "2.1.1",
-		"typescript-esbuild": "0.4.10",
+		"@playform/build": "0.0.1",
 		"vite": "5.2.7",
 		"vite-plugin-solid": "2.10.2"
 	},
 	"optionalDependencies": {
-		"typescript-document": "0.0.8"
+		"@playform/document": "0.0.2"
 	},
 	"publishConfig": {
 		"access": "public"
