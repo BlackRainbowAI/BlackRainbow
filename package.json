@@ -33,7 +33,7 @@
 		"esbuild-plugin-copy": "2.1.1",
 		"typescript-document": "0.0.7",
 		"typescript-esbuild": "0.4.10",
-		"vite": "5.2.6",
+		"vite": "5.2.7",
 		"vite-plugin-solid": "2.10.2"
 	},
 	"publishConfig": {
