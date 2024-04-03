@@ -3,12 +3,16 @@
  *
  */
 export default {
+	color: true,
 	format: "esm",
+	metafile: true,
 	minify: true,
 	outdir: "Target",
-	bundle: true,
 	platform: "browser",
+	bundle: true,
 	target: ["edge104", "esnext"],
+	write: true,
+	logLevel: "debug",
 	plugins: [
 		{
 			name: "Target",
@@ -25,7 +29,7 @@ export default {
 					}
 				}),
 		},
-		(await import("esbuild-plugin-copy")).copy({
+		(await import("@playform/copy")).copy({
 			resolveFrom: "out",
 			assets: [
 				{
