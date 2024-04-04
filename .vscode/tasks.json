@@ -1,7 +1,7 @@
 {
 	"tasks": [
 		{
-			"detail": "Build 'Source/**/*.ts' -es Configuration/ESBuild.ts",
+			"detail": "Build 'Source/**/*.ts' --ESBuild Configuration/ESBuild.ts",
 			"group": "build",
 			"label": "npm:build",
 			"script": "build",
