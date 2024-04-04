@@ -20,7 +20,7 @@
 	"type": "module",
 	"scripts": {
 		"Document": "Document 'Source/**/*.ts'",
-		"Build": "Build 'Source/**/*.ts' --ESBuild Configuration/ESBuild.ts",
+		"prepublishOnly": "Build 'Source/**/*.ts' --ESBuild Configuration/ESBuild.ts",
 		"tauri": "tauri"
 	},
 	"dependencies": {
