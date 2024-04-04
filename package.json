@@ -19,7 +19,6 @@
 	},
 	"type": "module",
 	"scripts": {
-		"Document": "Document 'Source/**/*.ts'",
 		"prepublishOnly": "Build 'Source/**/*.ts' --ESBuild Configuration/ESBuild.ts",
 		"tauri": "tauri"
 	},
@@ -28,12 +27,11 @@
 		"solid-js": "1.8.16"
 	},
 	"devDependencies": {
-		"@playform/build": "0.0.2",
+		"@playform/build": "0.0.5",
 		"@tauri-apps/cli": "2.0.0-beta.12",
 		"@types/node": "20.12.4",
 		"vite": "5.2.8",
-		"vite-plugin-solid": "2.10.2",
-		"@playform/document": "0.0.3"
+		"vite-plugin-solid": "2.10.2"
 	},
 	"publishConfig": {
 		"access": "public"
