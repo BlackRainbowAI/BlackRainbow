@@ -34,7 +34,7 @@ const refresh = async () => {
 
 					await refresh();
 				},
-				24000 + Math.floor(Math.random() * length * 1000),
+				24000 + Math.floor(Math.random() * length * 1000)
 			);
 
 			setTimeout(
@@ -47,7 +47,7 @@ const refresh = async () => {
 
 					await refresh();
 				},
-				24000 + Math.floor(Math.random() * length * 1000),
+				24000 + Math.floor(Math.random() * length * 1000)
 			);
 		});
 	}, 30000);
@@ -58,7 +58,7 @@ setInterval(
 		(await getElement(".btd-clear-column-link")).forEach((el) => {
 			el?.click();
 		}),
-	55000,
+	55000
 );
 
 setInterval(async () => {
@@ -77,7 +77,7 @@ setInterval(async () => {
 		async () =>
 			(
 				await getElement(
-					".js-tweet-detail.tweet-detail-wrapper .js-tweet-translation-text.tweet-translation-text",
+					".js-tweet-detail.tweet-detail-wrapper .js-tweet-translation-text.tweet-translation-text"
 				)
 			).forEach((el) => {
 				const position = el.getBoundingClientRect();
@@ -89,7 +89,7 @@ setInterval(async () => {
 					el.scrollIntoView();
 				}
 			}),
-		3000,
+		3000
 	);
 }, 15000);
 
