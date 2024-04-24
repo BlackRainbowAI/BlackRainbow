@@ -1,4 +1,4 @@
-# 🎏 [Stream.]
+# 🎏 [Stream.]
 
 ## Changelog
 
