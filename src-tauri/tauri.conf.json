@@ -1,0 +1,110 @@
+{
+	"$schema": "https://raw.githubusercontent.com/tauri-apps/tauri/dev/tooling/cli/schema.json",
+	"build": {
+		"beforeBuildCommand": "npm run prepublishOnly",
+		"beforeDevCommand": "npm run prepublishOnly",
+		"devPath": "../index.html",
+		"distDir": "../Target",
+		"withGlobalTauri": false
+	},
+	"package": {
+		"productName": "tauri",
+		"version": "2.0.0"
+	},
+	"tauri": {
+		"allowlist": {
+			"all": true
+		},
+		"bundle": {
+			"active": true,
+			"category": "News",
+			"copyright": "Copyright (c) 2022-2023. All rights reserved.",
+			"externalBin": [],
+			"icon": [
+				"Source/Image/16x16.png",
+				"Source/Image/32x32.png",
+				"Source/Image/icon.ico"
+			],
+			"identifier": "media.blackrainbow.app",
+			"longDescription": "",
+			"resources": ["../Target/*"],
+			"shortDescription": "",
+			"targets": "all",
+			"windows": {
+				"certificateThumbprint": null,
+				"digestAlgorithm": "sha256",
+				"timestampUrl": "",
+				"wix": {
+					"bannerPath": "Source/Image/banner.png",
+					"dialogImagePath": "Source/Image/dialogImage.png"
+				}
+			}
+		},
+		"security": {
+			"csp": null,
+			"dangerousDisableAssetCspModification": true,
+			"dangerousRemoteDomainIpcAccess": [
+				{
+					"domain": "www.twitter.com",
+					"enableTauriAPI": true,
+					"windows": ["ta"]
+				},
+				{
+					"domain": "tweetdeck.twitter.com",
+					"enableTauriAPI": true,
+					"windows": ["ta"]
+				},
+				{
+					"domain": "www.flightradar24.com",
+					"enableTauriAPI": true,
+					"windows": ["fa"]
+				}
+			]
+		},
+		"systemTray": {
+			"iconAsTemplate": true,
+			"iconPath": "Source/Image/icon.ico"
+		},
+		"updater": {
+			"active": false
+		},
+		"windows": [
+			{
+				"alwaysOnTop": true,
+				"center": false,
+				"decorations": false,
+				"fileDropEnabled": false,
+				"focus": true,
+				"fullscreen": true,
+				"label": "fa",
+				"maximized": false,
+				"resizable": false,
+				"skipTaskbar": false,
+				"title": "Follow aircraft.",
+				"transparent": true,
+				"url": "https://flightradar24.com",
+				"visible": true,
+				"x": 0,
+				"y": 0
+			},
+			{
+				"alwaysOnTop": true,
+				"center": false,
+				"decorations": false,
+				"fileDropEnabled": false,
+				"focus": true,
+				"fullscreen": true,
+				"label": "ta",
+				"maximized": false,
+				"resizable": false,
+				"skipTaskbar": false,
+				"title": "Twitter automate.",
+				"transparent": true,
+				"url": "https://tweetdeck.twitter.com",
+				"visible": true,
+				"x": 0,
+				"y": 0
+			}
+		]
+	}
+}

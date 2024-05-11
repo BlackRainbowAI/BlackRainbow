@@ -1,0 +1,27 @@
+{
+	"configurations": [
+		{
+			"cargo": {
+				"args": ["build", "--manifest-path=./src-tauri/Cargo.toml"]
+			},
+			"name": "Tauri Dev",
+			"preLaunchTask": "npm:build",
+			"request": "launch",
+			"type": "lldb"
+		},
+		{
+			"cargo": {
+				"args": [
+					"build",
+					"--release",
+					"--manifest-path=./src-tauri/Cargo.toml"
+				]
+			},
+			"name": "Tauri Prod",
+			"preLaunchTask": "npm:build",
+			"request": "launch",
+			"type": "lldb"
+		}
+	],
+	"version": "0.2.0"
+}
