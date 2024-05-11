@@ -1,0 +1,39 @@
+{
+	"name": "blackrainbow",
+	"version": "0.0.1",
+	"private": false,
+	"description": "BlackRainbow tauri.",
+	"homepage": "HTTPS://GitHub.Com/BlackRainbowAI/NPM#readme",
+	"bugs": {
+		"url": "HTTPS://GitHub.Com/BlackRainbowAI/NPM/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BlackRainbowAI/NPM.git"
+	},
+	"license": "SEE LICENSE IN LICENSE",
+	"author": {
+		"name": "Nikola Hristov",
+		"email": "Nikola@PlayForm.Cloud",
+		"url": "https://nikolahristov.tech"
+	},
+	"type": "module",
+	"scripts": {
+		"prepublishOnly": "Build 'Source/**/*.ts' --ESBuild Configuration/ESBuild.ts",
+		"tauri": "tauri"
+	},
+	"dependencies": {
+		"@tauri-apps/api": "1.5.4",
+		"solid-js": "1.8.17"
+	},
+	"devDependencies": {
+		"@playform/build": "0.0.8",
+		"@tauri-apps/cli": "2.0.0-beta.16",
+		"@types/node": "20.12.11",
+		"vite": "5.2.11",
+		"vite-plugin-solid": "2.10.2"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}
