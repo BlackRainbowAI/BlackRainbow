@@ -3,6 +3,6 @@
  *
  */
 export default {
-    bundle: true,
-    target: ["edge104", "esnext"],
+	bundle: true,
+	target: ["edge104", "esnext"],
 };
