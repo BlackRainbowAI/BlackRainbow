@@ -5,10 +5,10 @@ interface NodeListOf<TNode extends Node> extends NodeList {
 		callbackfn: (
 			value: TNode,
 			key: number,
-			parent: NodeListOf<TNode>
+			parent: NodeListOf<TNode>,
 		) => void,
 		// biome-ignore lint/suspicious/noExplicitAny:
-		thisArg?: any
+		thisArg?: any,
 	): void;
 
 	[index: number]: TNode;
@@ -17,7 +17,7 @@ interface NodeListOf<TNode extends Node> extends NodeList {
 export default {
 	getElement: async (
 		Selector: string,
-		Parent: HTMLElement | Document = document
+		Parent: HTMLElement | Document = document,
 	): Promise<NodeListOf<HTMLElement>> =>
 		Parent.querySelectorAll<HTMLElement>(Selector),
 };
