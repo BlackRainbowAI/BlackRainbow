@@ -32,7 +32,7 @@ fn main() {
 											"../Target/scripts/{}.js",
 											window.label()
 										))
-										.expect("Failed to resolve resource dir."),
+										.expect("Cannot resolve_resource."),
 								)
 								.expect("Error while reading JS file."),
 							)
@@ -52,7 +52,7 @@ fn main() {
 											"../Target/styles/{}.css",
 											window.label()
 										))
-										.expect("Failed to resolve resource dir.")
+										.expect("cannot resolve_resource.")
 								)
 								.expect("Error while reading CSS file.")
 							))
