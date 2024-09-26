@@ -24,20 +24,12 @@
 	},
 	"dependencies": {
 		"@tauri-apps/api": "2.0.0-rc.5",
-<<<<<<< HEAD
-		"solid-js": "1.8.23"
-=======
 		"solid-js": "1.9.1"
->>>>>>> 876b0dd044861b1c999b3e3d6e01a0711e9ff05d
 	},
 	"devDependencies": {
 		"@playform/build": "0.1.6",
 		"@tauri-apps/cli": "2.0.0-rc.16",
-<<<<<<< HEAD
-		"@types/node": "22.6.0",
-=======
 		"@types/node": "22.7.0",
->>>>>>> 876b0dd044861b1c999b3e3d6e01a0711e9ff05d
 		"vite": "5.4.7",
 		"vite-plugin-solid": "2.10.2"
 	},
