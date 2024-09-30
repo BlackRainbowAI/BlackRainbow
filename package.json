@@ -28,7 +28,7 @@
 	},
 	"devDependencies": {
 		"@playform/build": "0.1.7",
-		"@tauri-apps/cli": "2.0.0-rc.16",
+		"@tauri-apps/cli": "2.0.0-rc.17",
 		"@types/node": "22.7.3",
 		"vite": "5.4.8",
 		"vite-plugin-solid": "2.10.2"
