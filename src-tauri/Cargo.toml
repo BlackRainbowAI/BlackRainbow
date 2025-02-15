@@ -1,28 +1,31 @@
-[package]
-name = "tauri"
-version = "0.0.1"
+[[bin]]
+name = "Build"
+path = "build.rs"
 
 [build]
 target-dir = "Target"
 
 [build-dependencies]
-tauri-build = { version = "2.0.3", features = [] }
-tauri = { version = "2.1.1", features = ["api-all", "devtools", "system-tray"] }
 serde = { version = "1.0.216", features = ["derive"] }
 serde_json = { version = "1.0.133" }
-
-[features]
-custom-protocol = ["tauri/custom-protocol"]
-
-default = []
-Debug  []
-
-[target."cfg(windows)".dependencies]
-winapi = { version = "0.3.9", features = ["shellscalingapi"] }
-
-[[bin]]
-name = "Build"
-path = "build.rs"
+tauri = { version = "2.1.1", features = ["api-all", "devtools", "system-tray"] }
+tauri-build = { version = "2.0.3", features = [] }
 
 [dependencies]
 unbug = { version = "0.4.0" }
+
+[features]
+Debug = []
+custom-protocol = ["tauri/custom-protocol"]
+default = []
+
+[package]
+name = "tauri"
+version = "0.0.1"
+
+[target]
+
+[target."cfg(windows)"]
+
+[target."cfg(windows)".dependencies]
+winapi = { version = "0.3.9", features = ["shellscalingapi"] }
