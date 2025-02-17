@@ -3,77 +3,45 @@
 	"build": {
 		"beforeBuildCommand": "npm run prepublishOnly",
 		"beforeDevCommand": "npm run prepublishOnly",
-		"devPath": "../index.html",
-		"distDir": "../Target",
-		"withGlobalTauri": false
+		"frontendDist": "../Target",
 	},
-	"package": {
-		"productName": "tauri",
-		"version": "2.0.0"
-	},
-	"tauri": {
-		"allowlist": {
-			"all": true
-		},
-		"bundle": {
-			"active": true,
-			"category": "News",
-			"copyright": "Copyright (c) 2022-2023. All rights reserved.",
-			"externalBin": [],
-			"icon": [
-				"Source/Image/16x16.png",
-				"Source/Image/32x32.png",
-				"Source/Image/icon.ico"
-			],
-			"identifier": "media.blackrainbow.app",
-			"longDescription": "",
-			"resources": ["../Target/*"],
-			"shortDescription": "",
-			"targets": "all",
-			"windows": {
-				"certificateThumbprint": null,
-				"digestAlgorithm": "sha256",
-				"timestampUrl": "",
-				"wix": {
-					"bannerPath": "Source/Image/banner.png",
-					"dialogImagePath": "Source/Image/dialogImage.png"
-				}
+	"productName": "tauri",
+	"version": "2.0.0",
+	"identifier": "media.blackrainbow.app",
+	"bundle": {
+		"active": true,
+		"category": "News",
+		"copyright": "Copyright (c) 2022-2023. All rights reserved.",
+		"externalBin": [],
+		"icon": [
+			"Source/Image/16x16.png",
+			"Source/Image/32x32.png",
+			"Source/Image/icon.ico"
+		],
+		"longDescription": "",
+		"resources": ["../Target/*"],
+		"shortDescription": "",
+		"targets": "all",
+		"windows": {
+			"certificateThumbprint": null,
+			"digestAlgorithm": "sha256",
+			"timestampUrl": "",
+			"wix": {
+				"bannerPath": "Source/Image/banner.png",
+				"dialogImagePath": "Source/Image/dialogImage.png"
 			}
-		},
+		}
+	},
+	"app": {
 		"security": {
 			"csp": null,
-			"dangerousDisableAssetCspModification": true,
-			"dangerousRemoteDomainIpcAccess": [
-				{
-					"domain": "www.twitter.com",
-					"enableTauriAPI": true,
-					"windows": ["ta"]
-				},
-				{
-					"domain": "tweetdeck.twitter.com",
-					"enableTauriAPI": true,
-					"windows": ["ta"]
-				},
-				{
-					"domain": "www.flightradar24.com",
-					"enableTauriAPI": true,
-					"windows": ["fa"]
-				}
-			]
-		},
-		"systemTray": {
-			"iconAsTemplate": true,
-			"iconPath": "Source/Image/icon.ico"
-		},
-		"updater": {
-			"active": false
+			"dangerousDisableAssetCspModification": true
 		},
 		"windows": [
 			{
 				"alwaysOnTop": true,
 				"center": false,
 				"decorations": false,
-				"fileDropEnabled": false,
 				"focus": true,
 				"fullscreen": true,
 				"label": "fa",
@@ -91,7 +59,6 @@
 				"alwaysOnTop": true,
 				"center": false,
 				"decorations": false,
-				"fileDropEnabled": false,
 				"focus": true,
 				"fullscreen": true,
 				"label": "ta",
