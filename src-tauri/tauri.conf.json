@@ -3,7 +3,7 @@
 	"build": {
 		"beforeBuildCommand": "npm run prepublishOnly",
 		"beforeDevCommand": "npm run prepublishOnly",
-		"frontendDist": "../Target",
+		"frontendDist": "../Target"
 	},
 	"productName": "tauri",
 	"version": "2.0.0",
