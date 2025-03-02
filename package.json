@@ -23,15 +23,15 @@
 		"tauri": "tauri"
 	},
 	"dependencies": {
-		"@tauri-apps/api": "2.2.0",
+		"@tauri-apps/api": "2.3.0",
 		"solid-js": "1.9.5"
 	},
 	"devDependencies": {
 		"@playform/build": "0.2.1",
-		"@tauri-apps/cli": "2.2.7",
+		"@tauri-apps/cli": "2.3.0",
 		"@types/node": "22.13.5",
 		"vite": "6.2.0",
-		"vite-plugin-solid": "2.11.2"
+		"vite-plugin-solid": "2.11.6"
 	},
 	"publishConfig": {
 		"access": "public"
