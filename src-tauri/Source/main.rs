@@ -21,27 +21,24 @@ fn main() {
 		.on_system_tray_event(|app, event| {
 			if let SystemTrayEvent::MenuItemClick { id, .. } = event {
 				match id.as_str() {
-					"devtools" => {
-						app.windows().into_iter().for_each(|(_label, window)| {
-							window.open_devtools();
-						})
-					},
-					"run" => {
-						app.windows().into_iter().for_each(|(_label, window)| {
-							window
-								.eval(
-									&fs::read_to_string(
-										app.path_resolver()
-											.resolve_resource(format!("../Target/scripts/{}.js", window.label()))
-											.expect("Cannot resolve_resource."),
-									)
-									.expect("Error while reading JS file."),
+					"devtools" => app.windows().into_iter().for_each(|(_label, window)| {
+						window.open_devtools();
+					}),
+					"run" => app.windows().into_iter().for_each(|(_label, window)| {
+						window
+							.eval(
+								&fs::read_to_string(
+									app.path_resolver()
+										.resolve_resource(format!("../Target/scripts/{}.js", window.label()))
+										.expect("Cannot resolve_resource."),
 								)
-								.expect("Script did not execute successfully.");
+								.expect("Error while reading JS file."),
+							)
+							.expect("Script did not execute successfully.");
 
-							window
-								.eval(&format!(
-									r#"
+						window
+							.eval(&format!(
+								r#"
 									var style = document.createElement('style');
 
 									style.innerHTML = `{}`;
@@ -50,16 +47,15 @@ fn main() {
 
 									document.head.appendChild(style);
 								"#,
-									&fs::read_to_string(
-										app.path_resolver()
-											.resolve_resource(format!("../Target/styles/{}.css", window.label()))
-											.expect("cannot resolve_resource.")
-									)
-									.expect("Error while reading CSS file.")
-								))
-								.expect("Style did not load successfully.");
-						})
-					},
+								&fs::read_to_string(
+									app.path_resolver()
+										.resolve_resource(format!("../Target/styles/{}.css", window.label()))
+										.expect("cannot resolve_resource.")
+								)
+								.expect("Error while reading CSS file.")
+							))
+							.expect("Style did not load successfully.");
+					}),
 					"show" => {
 						app.windows().into_iter().for_each(|(_label, window)| {
 							window.show().unwrap();
