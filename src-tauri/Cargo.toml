@@ -5,8 +5,8 @@ path = "build.rs"
 [build-dependencies]
 serde = { version = "1.0.219", features = ["derive"] }
 serde_json = { version = "1.0.140" }
-tauri = { version = "2.3.1", features = ["devtools"] }
-tauri-build = { version = "2.0.6", features = [] }
+tauri = { version = "2.4.0", features = ["devtools"] }
+tauri-build = { version = "2.1.0", features = [] }
 
 [dependencies]
 unbug = { version = "0.4.0" }
