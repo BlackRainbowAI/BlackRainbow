@@ -30,7 +30,11 @@
 		"@playform/build": "0.2.3",
 		"@tauri-apps/cli": "2.5.0",
 		"@types/node": "22.14.1",
+<<<<<<< HEAD
 		"vite": "6.3.2",
+=======
+		"vite": "6.3.1",
+>>>>>>> 6ed7d69d1f15659a85496761ccd847900a28f83f
 		"vite-plugin-solid": "2.11.6"
 	},
 	"publishConfig": {
