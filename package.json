@@ -3,9 +3,9 @@
 	"version": "0.0.1",
 	"private": false,
 	"description": "BlackRainbow tauri.",
-	"homepage": "HTTPS://GitHub.Com/BlackRainbowAI/NPM#readme",
+	"homepage": "https://GitHub.Com/BlackRainbowAI/NPM#readme",
 	"bugs": {
-		"url": "HTTPS://GitHub.Com/BlackRainbowAI/NPM/issues"
+		"url": "https://GitHub.Com/BlackRainbowAI/NPM/issues"
 	},
 	"repository": {
 		"type": "git",
@@ -15,7 +15,7 @@
 	"author": {
 		"name": "Source 🖋️ Open 👐🏻",
 		"email": "Source/Open@Editor.Land",
-		"url": "HTTPS://Editor.Land"
+		"url": "https://Editor.Land"
 	},
 	"type": "module",
 	"scripts": {
