@@ -23,13 +23,17 @@
 		"tauri": "tauri"
 	},
 	"dependencies": {
-		"@tauri-apps/api": "2.6.0",
+		"@tauri-apps/api": "2.7.0",
 		"solid-js": "1.9.7"
 	},
 	"devDependencies": {
 		"@playform/build": "0.2.5",
 		"@tauri-apps/cli": "2.6.2",
+<<<<<<< HEAD
 		"@types/node": "24.0.14",
+=======
+		"@types/node": "24.0.15",
+>>>>>>> 3a321d77d4a7c47096c0ed64188cdcca931342f3
 		"vite": "7.0.5",
 		"vite-plugin-solid": "2.11.7"
 	},
