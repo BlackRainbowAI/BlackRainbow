@@ -31,7 +31,7 @@
 		"@tauri-apps/cli": "2.11.4",
 		"@types/node": "26.1.2",
 		"vite": "8.1.5",
-		"vite-plugin-solid": "2.11.13"
+		"vite-plugin-solid": "2.11.14"
 	},
 	"publishConfig": {
 		"access": "public"
